@@ -103,6 +103,26 @@ _STATE_VERB = re.compile(
     re.I,
 )
 
+# A claim sentence: a verb of assertion sitting next to a figure, e.g.
+# "GDP growth for FY25 is estimated to be 6.4 per cent".
+#
+# This exists because the rest of the scorer rewards digit density, which
+# systematically prefers statistical tables over prose — and the headline
+# assertions a reader most wants are usually written as sentences. Measured on
+# the starter set, the pages stating India's FY25 growth estimate ranked 58/89
+# and 83/100 by density alone, so they fell outside any sane reading budget
+# while far less meaningful appendix tables were read first.
+_CLAIM = re.compile(
+    r"(?:estimated|projected|expected|forecast|revised|reported|recorded|"
+    r"stood|amounted|grew|rose|fell|declined|increased|decreased|moderated|"
+    r"accelerated|is|was|at)\s+"
+    r"(?:to\s+be\s+|to\s+|by\s+|at\s+)?"
+    r"(?:around\s+|about\s+|nearly\s+|approximately\s+)?"
+    r"[₹$€£]?\s?\d[\d,.]*\s?"
+    r"(?:per\s?cent|percent|%|crore|lakh|million|billion|bn|mn|cr\b)",
+    re.I,
+)
+
 
 def fact_density(text: str) -> float:
     """Cheap score for how fact-bearing a passage looks. Higher is better."""
@@ -120,6 +140,12 @@ def fact_density(text: str) -> float:
     score += 2.0 * bool(_PERIOD.search(text))
     score += 1.5 * bool(_DATE.search(text))
     score += 1.5 * bool(_STATE_VERB.search(text))
+
+    # Assertive prose is worth more than its digit count suggests. Weighted to
+    # rival a dense table, and scaled by how many such claims appear, so a page
+    # of headline findings can outrank a page of appendix figures.
+    claims = len(_CLAIM.findall(text))
+    score += min(claims * 1.6, 4.8)
 
     # Pages that are almost entirely digits are usually raw statistical tables
     # whose headers sit elsewhere; we cannot ground them reliably, so damp them.
