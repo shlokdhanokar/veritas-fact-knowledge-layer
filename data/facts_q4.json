@@ -1,0 +1,5591 @@
+[
+  {
+    "fact_id": "00e57ebf05519c66",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Document",
+    "metric": "Date",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "May 17, 2024",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 5,
+      "end": 23,
+      "quote": "Date: May 17, 2024",
+      "bboxes": [
+        [
+          92.87999725341797,
+          126.64763641357422,
+          174.63612365722656,
+          138.73533630371094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "document",
+    "metric_key": "date"
+  },
+  {
+    "fact_id": "d3983fe2bd516ec3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery Limited",
+    "metric": "BSE Scrip Code",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "543529",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 111,
+      "end": 129,
+      "quote": "Scrip Code: 543529",
+      "bboxes": [
+        [
+          92.87999725341797,
+          217.12762451171875,
+          173.0719451904297,
+          229.21533203125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery limited",
+    "metric_key": "bse scrip code"
+  },
+  {
+    "fact_id": "1c7f2f8dfb27121f",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery Limited",
+    "metric": "NSE Symbol",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "DELHIVERY",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 271,
+      "end": 288,
+      "quote": "Symbol: DELHIVERY",
+      "bboxes": [
+        [
+          313.44000244140625,
+          217.72763061523438,
+          394.26324462890625,
+          229.81533813476562
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery limited",
+    "metric_key": "nse symbol"
+  },
+  {
+    "fact_id": "890eac415a2dac1c",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Earnings Audio / Video (AV) Conference Call",
+    "metric": "Purpose",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "Investor Presentation",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 299,
+      "end": 374,
+      "quote": "Investor Presentation for the ‘Earnings Audio / Video (AV) Conference Call’",
+      "bboxes": [
+        [
+          90.36000061035156,
+          254.08761596679688,
+          580.25341796875,
+          266.1753234863281
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "earnings audio / video (av) conference call",
+    "metric_key": "purpose"
+  },
+  {
+    "fact_id": "a17baf180a6d665d",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Earnings Audio / Video (AV) Conference Call",
+    "metric": "Scheduled Date",
+    "fact_type": "event",
+    "quantity": null,
+    "value_text": "May 17, 2024",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 375,
+      "end": 426,
+      "quote": "scheduled to be held on              \n\nMay 17, 2024",
+      "bboxes": [
+        [
+          90.36000061035156,
+          254.08761596679688,
+          580.25341796875,
+          266.1753234863281
+        ],
+        [
+          117.0,
+          266.0876159667969,
+          334.2552185058594,
+          278.1753234863281
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "earnings audio / video (av) conference call",
+    "metric_key": "scheduled date"
+  },
+  {
+    "fact_id": "33659b972511c914",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Investor Presentation",
+    "metric": "Regulatory Provision",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "Regulation 30 and 33 of the SEBI (Listing Obligations and Disclosure Requirements) Regulations, 2015",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 605,
+      "end": 736,
+      "quote": "pursuant to the provisions of Regulation 30 and 33 of the SEBI (Listing Obligations and Disclosure Requirements) \nRegulations, 2015",
+      "bboxes": [
+        [
+          90.36000061035156,
+          326.32763671875,
+          552.6887817382812,
+          338.41534423828125
+        ],
+        [
+          90.36000061035156,
+          338.4476318359375,
+          552.7506713867188,
+          350.53533935546875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "investor presentation",
+    "metric_key": "regulatory provision"
+  },
+  {
+    "fact_id": "312fac4a417c1f37",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Financial Results",
+    "metric": "Reporting Basis",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "Standalone and Consolidated",
+    "context": {
+      "basis": "Standalone and Consolidated",
+      "vintage": "Audited"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 790,
+      "end": 844,
+      "quote": "Audited Standalone and Consolidated \nFinancial Results",
+      "bboxes": [
+        [
+          90.36000061035156,
+          338.4476318359375,
+          552.7506713867188,
+          350.53533935546875
+        ],
+        [
+          90.36000061035156,
+          350.567626953125,
+          552.7012329101562,
+          362.65533447265625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "financial results",
+    "metric_key": "reporting basis"
+  },
+  {
+    "fact_id": "cc5622525ef967b7",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Financial Results",
+    "metric": "Period",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "quarter and financial year ended March 31, 2024",
+    "context": {
+      "period": "quarter and financial year ended March 31, 2024"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 860,
+      "end": 915,
+      "quote": "for the quarter and financial year ended March 31, 2024",
+      "bboxes": [
+        [
+          90.36000061035156,
+          350.567626953125,
+          552.7012329101562,
+          362.65533447265625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "financial results",
+    "metric_key": "period"
+  },
+  {
+    "fact_id": "6ccdb3bf87344dc9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Earnings Audio / Video (AV) Conference Call",
+    "metric": "Scheduled Time",
+    "fact_type": "event",
+    "quantity": null,
+    "value_text": "06:00 P.M. (IST)",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1003,
+      "end": 1079,
+      "quote": "scheduled to be held today, i.e., Friday, May 17, 2024, \nat 06:00 P.M. (IST)",
+      "bboxes": [
+        [
+          90.36000061035156,
+          362.4476318359375,
+          552.6793823242188,
+          374.53533935546875
+        ],
+        [
+          90.36000061035156,
+          374.567626953125,
+          236.34768676757812,
+          386.65533447265625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "earnings audio / video (av) conference call",
+    "metric_key": "scheduled time"
+  },
+  {
+    "fact_id": "447073eddeab08f2",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery Limited",
+    "metric": "Website",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "www.delhivery.com",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1145,
+      "end": 1183,
+      "quote": "Company’s website at www.delhivery.com",
+      "bboxes": [
+        [
+          90.36000061035156,
+          398.6876220703125,
+          357.62371826171875,
+          410.77532958984375
+        ],
+        [
+          357.9599914550781,
+          398.6876220703125,
+          440.51678466796875,
+          410.77532958984375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery limited",
+    "metric_key": "website"
+  },
+  {
+    "fact_id": "e51205183852f1b9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Madhulika Rawat",
+    "metric": "Role",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "Company Secretary & Compliance Officer",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1308,
+      "end": 1363,
+      "quote": "Madhulika Rawat \nCompany Secretary & Compliance Officer",
+      "bboxes": [
+        [
+          90.36000061035156,
+          543.2876586914062,
+          162.55921936035156,
+          555.3753662109375
+        ],
+        [
+          162.60000610351562,
+          543.2876586914062,
+          164.83920288085938,
+          555.3753662109375
+        ],
+        [
+          90.36000061035156,
+          555.2876586914062,
+          261.81439208984375,
+          567.3753662109375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "madhulika rawat",
+    "metric_key": "role"
+  },
+  {
+    "fact_id": "f910dca37308a9bf",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Madhulika Rawat",
+    "metric": "Membership Number",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "F8765",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1365,
+      "end": 1385,
+      "quote": "Membership No: F8765",
+      "bboxes": [
+        [
+          90.36000061035156,
+          567.2876586914062,
+          187.05682373046875,
+          579.3753662109375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "madhulika rawat",
+    "metric_key": "membership number"
+  },
+  {
+    "fact_id": "74f8c90856f26dc3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Document signing",
+    "metric": "Place",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "Goa",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1387,
+      "end": 1397,
+      "quote": "Place: Goa",
+      "bboxes": [
+        [
+          90.36000061035156,
+          579.4075927734375,
+          134.83340454101562,
+          591.4953002929688
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "document signing",
+    "metric_key": "place"
+  },
+  {
+    "fact_id": "9f59d7aadf6be5e3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Digital Signature",
+    "metric": "Date and Time",
+    "fact_type": "attribute",
+    "quantity": null,
+    "value_text": "2024.05.17 17:46:01 +05'30'",
+    "context": {},
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 1,
+      "start": 1497,
+      "end": 1531,
+      "quote": "Date: 2024.05.17 \n17:46:01 +05'30'",
+      "bboxes": [
+        [
+          136.587158203125,
+          522.7305908203125,
+          173.6222686767578,
+          528.974853515625
+        ],
+        [
+          136.587158203125,
+          528.9644775390625,
+          171.5390625,
+          535.208740234375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "digital signature",
+    "metric_key": "date and time"
+  },
+  {
+    "fact_id": "b3a2c08f9c7afd96",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL",
+    "metric": "growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "30+",
+      "value": 30.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 30.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 22,
+      "end": 42,
+      "quote": "PTL: 30%+ YoY growth",
+      "bboxes": [
+        [
+          92.90399932861328,
+          292.8962097167969,
+          741.3543090820312,
+          310.69158935546875
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '30+' does not appear verbatim in its own quote",
+    "subject_key": "ptl",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "e1dc9da0afc6393b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Company",
+    "metric": "EBITDA profitability",
+    "fact_type": "state",
+    "quantity": null,
+    "value_text": "achieved",
+    "context": {
+      "period": "full year FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 164,
+      "end": 203,
+      "quote": "full year EBITDA profitability achieved",
+      "bboxes": [
+        [
+          93.552001953125,
+          124.29618835449219,
+          792.361572265625,
+          142.09158325195312
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "company",
+    "metric_key": "ebitda profitability"
+  },
+  {
+    "fact_id": "747e4f40989d3257",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "SCS",
+    "metric": "service EBITDA profitability",
+    "fact_type": "state",
+    "quantity": null,
+    "value_text": "Doubled",
+    "context": {
+      "period": "FY24",
+      "measure": "over FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 207,
+      "end": 258,
+      "quote": "SCS: Doubled service EBITDA profitability over FY23",
+      "bboxes": [
+        [
+          92.90399932861328,
+          357.7261962890625,
+          580.1030883789062,
+          375.5215759277344
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "scs",
+    "metric_key": "service ebitda profitability"
+  },
+  {
+    "fact_id": "58c79f4c9064dfd6",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "TL",
+    "metric": "revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "40",
+      "value": 40.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 40.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 273,
+      "end": 299,
+      "quote": "TL: 40% YoY revenue growth",
+      "bboxes": [
+        [
+          94.96800231933594,
+          422.54620361328125,
+          671.8639526367188,
+          440.3415832519531
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "tl",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "2ea7cd68be1a3106",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "NWC days",
+    "metric": "NWC days",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "31",
+      "value": 31.0,
+      "magnitude": null,
+      "unit": "days",
+      "canonical_value": 31.0,
+      "canonical_unit": "days"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 372,
+      "end": 399,
+      "quote": "NWC days from 38 to 31 days",
+      "bboxes": [
+        [
+          94.94400024414062,
+          487.32647705078125,
+          499.962646484375,
+          505.14862060546875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "nwc days",
+    "metric_key": "nwc days"
+  },
+  {
+    "fact_id": "7426f0a11a78c85a",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "127",
+      "value": 127.0,
+      "magnitude": "Cr",
+      "unit": "Rs.",
+      "canonical_value": 1270000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 403,
+      "end": 452,
+      "quote": "FY24 EBITDA increased by Rs. 578 Cr to Rs. 127 Cr",
+      "bboxes": [
+        [
+          122.41999816894531,
+          153.0399932861328,
+          559.843994140625,
+          166.4199981689453
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "690a380a052da0c5",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PAT",
+    "metric": "PAT profitability",
+    "fact_type": "state",
+    "quantity": null,
+    "value_text": "profitable",
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 482,
+      "end": 507,
+      "quote": "PAT profitable in Q3 FY24",
+      "bboxes": [
+        [
+          123.0999984741211,
+          185.36000061035156,
+          617.739990234375,
+          198.74000549316406
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "pat",
+    "metric_key": "pat profitability"
+  },
+  {
+    "fact_id": "43434e116351aa21",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express Parcel",
+    "metric": "Service EBITDA profitability",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18+",
+      "value": 18.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 18.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 5,
+      "start": 572,
+      "end": 621,
+      "quote": "Express Parcel: 18%+ Service EBITDA profitability",
+      "bboxes": [
+        [
+          92.90399932861328,
+          228.07618713378906,
+          722.0157470703125,
+          245.87158203125
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '18+' does not appear verbatim in its own quote",
+    "subject_key": "express parcel",
+    "metric_key": "service ebitda profitability"
+  },
+  {
+    "fact_id": "07f4d30a5f17e379",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "India",
+    "metric": "integrated logistics platform status",
+    "fact_type": "state",
+    "quantity": null,
+    "value_text": "largest",
+    "context": {
+      "basis": "As per RedSeer report basis FY21 revenue",
+      "geography": "India"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 3,
+      "end": 51,
+      "quote": "India’s largest integrated logistics platform(1)",
+      "bboxes": [
+        [
+          51.33599853515625,
+          27.70947265625,
+          808.2137451171875,
+          68.9466323852539
+        ],
+        [
+          808.510009765625,
+          35.838401794433594,
+          831.3858642578125,
+          56.71119689941406
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "india",
+    "metric_key": "integrated logistics platform status"
+  },
+  {
+    "fact_id": "fd8393656c073bc7",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight",
+    "metric": "tonnage",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "1.4",
+      "value": 1.4,
+      "magnitude": "Mn",
+      "unit": "Tons",
+      "canonical_value": 1400000.0,
+      "canonical_unit": "tons"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "segment": "PTL freight"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 231,
+      "end": 271,
+      "quote": "1.4 Mn Tons\n\nPTL freight tonnage in FY24",
+      "bboxes": [
+        [
+          510.8599853515625,
+          320.29620361328125,
+          670.4837036132812,
+          351.47161865234375
+        ],
+        [
+          510.8599853515625,
+          352.6488037109375,
+          656.7424926757812,
+          364.9584045410156
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ptl freight",
+    "metric_key": "tonnage"
+  },
+  {
+    "fact_id": "ea4382e20b1b6480",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "29.8",
+      "value": 29.8,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 29.8,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "segment": "PTL freight",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 272,
+      "end": 282,
+      "quote": "YoY: 29.8%",
+      "bboxes": [
+        [
+          510.8599853515625,
+          365.8487854003906,
+          573.202880859375,
+          378.15838623046875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "fbe68180048b105c",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "revenue",
+    "metric": "revenue from services",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "8,142",
+      "value": 8142.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 81420000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 285,
+      "end": 322,
+      "quote": "₹8,142 Cr\n\nFY24 revenue from services",
+      "bboxes": [
+        [
+          80.06400299072266,
+          159.61448669433594,
+          204.81671142578125,
+          190.81663513183594
+        ],
+        [
+          80.06400299072266,
+          197.0587921142578,
+          226.2225799560547,
+          209.36839294433594
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "revenue",
+    "metric_key": "revenue from services"
+  },
+  {
+    "fact_id": "061b4c1506a82847",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "revenue from services",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "12.7",
+      "value": 12.7,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 12.7,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "basis": "Growth rate of revenue from services (excluding revenue from traded goods)",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 324,
+      "end": 337,
+      "quote": "YoY: 12.7%(2)",
+      "bboxes": [
+        [
+          80.06400299072266,
+          215.17881774902344,
+          139.514404296875,
+          227.48841857910156
+        ],
+        [
+          139.3699951171875,
+          215.18539428710938,
+          148.27842712402344,
+          223.34719848632812
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "revenue from services",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "55ea370c7fd8d8c2",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel",
+    "metric": "shipments",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "740",
+      "value": 740.0,
+      "magnitude": "Mn",
+      "unit": null,
+      "canonical_value": 740000000.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "segment": "Express parcel"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 339,
+      "end": 379,
+      "quote": "740 Mn\n\nExpress parcel shipments in FY24",
+      "bboxes": [
+        [
+          241.6999969482422,
+          319.7444763183594,
+          336.64971923828125,
+          350.9466552734375
+        ],
+        [
+          241.6999969482422,
+          352.0970764160156,
+          420.0518493652344,
+          364.43341064453125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "express parcel",
+    "metric_key": "shipments"
+  },
+  {
+    "fact_id": "40743eacc23d00ba",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel shipments",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "11.5",
+      "value": 11.5,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 11.5,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24",
+      "segment": "Express parcel",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 380,
+      "end": 390,
+      "quote": "YoY: 11.5%",
+      "bboxes": [
+        [
+          241.6999969482422,
+          365.3487854003906,
+          304.0481872558594,
+          377.65838623046875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "express parcel shipments",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "78a541f198dbb5e3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "127",
+      "value": 127.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 1270000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 393,
+      "end": 430,
+      "quote": "₹127Cr / 1.6%\n\nEBITDA / EBITDA margin",
+      "bboxes": [
+        [
+          379.9700012207031,
+          159.63619995117188,
+          481.2064514160156,
+          190.8115997314453
+        ],
+        [
+          481.3699951171875,
+          159.63619995117188,
+          496.94287109375,
+          190.8115997314453
+        ],
+        [
+          496.8500061035156,
+          159.63619995117188,
+          560.826416015625,
+          190.8115997314453
+        ],
+        [
+          379.9700012207031,
+          196.0688018798828,
+          510.959716796875,
+          208.37840270996094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "fb31b448ff27065e",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "1.6",
+      "value": 1.6,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 1.6,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 393,
+      "end": 430,
+      "quote": "₹127Cr / 1.6%\n\nEBITDA / EBITDA margin",
+      "bboxes": [
+        [
+          379.9700012207031,
+          159.63619995117188,
+          481.2064514160156,
+          190.8115997314453
+        ],
+        [
+          481.3699951171875,
+          159.63619995117188,
+          496.94287109375,
+          190.8115997314453
+        ],
+        [
+          496.8500061035156,
+          159.63619995117188,
+          560.826416015625,
+          190.8115997314453
+        ],
+        [
+          379.9700012207031,
+          196.0688018798828,
+          510.959716796875,
+          208.37840270996094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda",
+    "metric_key": "ebitda margin"
+  },
+  {
+    "fact_id": "da01b665a18c344a",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(452)",
+      "value": -452.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": -4520000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 431,
+      "end": 455,
+      "quote": "FY23: ₹(452) Cr / (6.3%)",
+      "bboxes": [
+        [
+          379.9700012207031,
+          209.24708557128906,
+          501.46392822265625,
+          221.5834503173828
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "552dc31835e680ec",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(6.3)",
+      "value": -6.3,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -6.3,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 431,
+      "end": 455,
+      "quote": "FY23: ₹(452) Cr / (6.3%)",
+      "bboxes": [
+        [
+          379.9700012207031,
+          209.24708557128906,
+          501.46392822265625,
+          221.5834503173828
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(6.3)' does not appear verbatim in its own quote",
+    "subject_key": "ebitda",
+    "metric_key": "ebitda margin"
+  },
+  {
+    "fact_id": "64fb2e2e59203df3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel",
+    "metric": "shipments",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "2.8",
+      "value": 2.8,
+      "magnitude": "Bn",
+      "unit": null,
+      "canonical_value": 2800000000.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "since inception",
+      "segment": "Express parcel"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 457,
+      "end": 506,
+      "quote": "2.8 Bn+ \nExpress parcel shipments since inception",
+      "bboxes": [
+        [
+          302.6199951171875,
+          457.5360107421875,
+          395.21197509765625,
+          484.2960205078125
+        ],
+        [
+          240.6999969482422,
+          485.2991943359375,
+          450.2947998046875,
+          497.0735778808594
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "express parcel",
+    "metric_key": "shipments"
+  },
+  {
+    "fact_id": "72baf49a655c805b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight",
+    "metric": "tonnage",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "4.8",
+      "value": 4.8,
+      "magnitude": "Mn",
+      "unit": "Tons",
+      "canonical_value": 4800000.0,
+      "canonical_unit": "tons"
+    },
+    "value_text": null,
+    "context": {
+      "period": "since inception",
+      "basis": "Includes Spoton’s full year tonnage for FY22",
+      "segment": "PTL freight"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 508,
+      "end": 560,
+      "quote": "4.8 Mn+ Tons(3) \nPTL freight tonnage since inception",
+      "bboxes": [
+        [
+          516.6199951171875,
+          458.9302673339844,
+          667.3826293945312,
+          485.717041015625
+        ],
+        [
+          667.3699951171875,
+          459.0281982421875,
+          686.8731689453125,
+          476.8235778808594
+        ],
+        [
+          686.8099975585938,
+          458.9302673339844,
+          693.4886474609375,
+          485.717041015625
+        ],
+        [
+          512.5399780273438,
+          486.6934814453125,
+          690.9435424804688,
+          498.49462890625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ptl freight",
+    "metric_key": "tonnage"
+  },
+  {
+    "fact_id": "2d1298a5f27f8be9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "76",
+      "value": 76.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 760000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 562,
+      "end": 608,
+      "quote": "₹76Cr / 0.9%\n\nAdj. EBITDA / Adj. EBITDA margin",
+      "bboxes": [
+        [
+          677.5900268554688,
+          159.63619995117188,
+          763.147705078125,
+          190.8115997314453
+        ],
+        [
+          763.3900146484375,
+          159.63619995117188,
+          778.962890625,
+          190.8115997314453
+        ],
+        [
+          778.9000244140625,
+          159.63619995117188,
+          842.87646484375,
+          190.8115997314453
+        ],
+        [
+          677.5900268554688,
+          196.0688018798828,
+          856.0513305664062,
+          208.37840270996094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda"
+  },
+  {
+    "fact_id": "5fd7094b49acff9a",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "0.9",
+      "value": 0.9,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 0.9,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 562,
+      "end": 608,
+      "quote": "₹76Cr / 0.9%\n\nAdj. EBITDA / Adj. EBITDA margin",
+      "bboxes": [
+        [
+          677.5900268554688,
+          159.63619995117188,
+          763.147705078125,
+          190.8115997314453
+        ],
+        [
+          763.3900146484375,
+          159.63619995117188,
+          778.962890625,
+          190.8115997314453
+        ],
+        [
+          778.9000244140625,
+          159.63619995117188,
+          842.87646484375,
+          190.8115997314453
+        ],
+        [
+          677.5900268554688,
+          196.0688018798828,
+          856.0513305664062,
+          208.37840270996094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda margin"
+  },
+  {
+    "fact_id": "54046d5c88a78e81",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(404)",
+      "value": -404.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": -4040000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 609,
+      "end": 633,
+      "quote": "FY23: ₹(404) Cr / (5.6%)",
+      "bboxes": [
+        [
+          677.5900268554688,
+          209.24708557128906,
+          799.0842895507812,
+          221.5834503173828
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda"
+  },
+  {
+    "fact_id": "62593bf140ff1bdc",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(5.6)",
+      "value": -5.6,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -5.6,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 6,
+      "start": 609,
+      "end": 633,
+      "quote": "FY23: ₹(404) Cr / (5.6%)",
+      "bboxes": [
+        [
+          677.5900268554688,
+          209.24708557128906,
+          799.0842895507812,
+          221.5834503173828
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(5.6)' does not appear verbatim in its own quote",
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda margin"
+  },
+  {
+    "fact_id": "4c232c15cb938c2b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "tonnage",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "384",
+      "value": 384.0,
+      "magnitude": "K",
+      "unit": "Tons",
+      "canonical_value": 384.0,
+      "canonical_unit": "tons"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 182,
+      "end": 223,
+      "quote": "384K Tons\n\nPTL freight tonnage in Q4 FY24",
+      "bboxes": [
+        [
+          510.8599853515625,
+          320.29620361328125,
+          650.3245849609375,
+          351.47161865234375
+        ],
+        [
+          510.8599853515625,
+          352.6488037109375,
+          674.3733520507812,
+          364.9584045410156
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "tonnage"
+  },
+  {
+    "fact_id": "619360ce2255d8b4",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "20.8",
+      "value": 20.8,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 20.8,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 224,
+      "end": 234,
+      "quote": "YoY: 20.8%",
+      "bboxes": [
+        [
+          510.8599853515625,
+          365.8487854003906,
+          634.6781616210938,
+          378.15838623046875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "1303668b49cb4b8b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "8.6",
+      "value": 8.6,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 8.6,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 237,
+      "end": 246,
+      "quote": "QoQ: 8.6%",
+      "bboxes": [
+        [
+          510.8599853515625,
+          365.8487854003906,
+          634.6781616210938,
+          378.15838623046875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "1806eb90ceaf65d3",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "revenue from services",
+    "metric": "revenue",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "2,076",
+      "value": 2076.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 20760000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 248,
+      "end": 288,
+      "quote": "₹2,076 Cr\n\nQ4 FY24 revenue from services",
+      "bboxes": [
+        [
+          80.06400299072266,
+          159.61448669433594,
+          204.81671142578125,
+          190.81663513183594
+        ],
+        [
+          80.06400299072266,
+          197.0587921142578,
+          243.87554931640625,
+          209.36839294433594
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "revenue from services",
+    "metric_key": "revenue"
+  },
+  {
+    "fact_id": "423bb74ea68aff69",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "revenue from services",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "11.6",
+      "value": 11.6,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 11.6,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 290,
+      "end": 300,
+      "quote": "YoY: 11.6%",
+      "bboxes": [
+        [
+          80.06400299072266,
+          215.17881774902344,
+          211.1866455078125,
+          227.48841857910156
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "revenue from services",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "cb77ab03a19af7e9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "revenue from services",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(5.4)",
+      "value": -5.4,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -5.4,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "basis": "excluding revenue from traded goods",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 303,
+      "end": 318,
+      "quote": "QoQ: (5.4%) (2)",
+      "bboxes": [
+        [
+          80.06400299072266,
+          215.17881774902344,
+          211.1866455078125,
+          227.48841857910156
+        ],
+        [
+          211.25,
+          215.18539428710938,
+          221.8384246826172,
+          223.34719848632812
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(5.4)' does not appear verbatim in its own quote",
+    "subject_key": "revenue from services",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "80cc6d2d5bb85730",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel shipments",
+    "metric": "number of shipments",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "176",
+      "value": 176.0,
+      "magnitude": "Mn",
+      "unit": null,
+      "canonical_value": 176000000.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 320,
+      "end": 363,
+      "quote": "176 Mn\n\nExpress parcel shipments in Q4 FY24",
+      "bboxes": [
+        [
+          240.10000610351562,
+          319.7444763183594,
+          335.0782165527344,
+          350.9466552734375
+        ],
+        [
+          240.10000610351562,
+          352.0970764160156,
+          436.0878601074219,
+          364.43341064453125
+        ]
+      ]
+    },
+    "confidence": 0.88,
+    "notes": "quote contains 3 numbers; column/period binding is inferred, not certain",
+    "subject_key": "express parcel shipments",
+    "metric_key": "number of shipments"
+  },
+  {
+    "fact_id": "ade8d4d5dc709306",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel shipments",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(2.2)",
+      "value": -2.2,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -2.2,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 364,
+      "end": 375,
+      "quote": "YoY: (2.2%)",
+      "bboxes": [
+        [
+          240.10000610351562,
+          365.3487854003906,
+          378.392822265625,
+          377.65838623046875
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(2.2)' does not appear verbatim in its own quote",
+    "subject_key": "express parcel shipments",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "07227f338c2aeca0",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA margin",
+    "metric": "EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "2.2",
+      "value": 2.2,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 2.2,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 370,
+      "end": 374,
+      "quote": "2.2%",
+      "bboxes": [
+        [
+          240.10000610351562,
+          365.3487854003906,
+          378.392822265625,
+          377.65838623046875
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ebitda margin",
+    "metric_key": "ebitda margin"
+  },
+  {
+    "fact_id": "90e28d7e1e3446fd",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express parcel shipments",
+    "metric": "growth rate",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(12.8)",
+      "value": -12.8,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -12.8,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 378,
+      "end": 390,
+      "quote": "QoQ: (12.8%)",
+      "bboxes": [
+        [
+          240.10000610351562,
+          365.3487854003906,
+          378.392822265625,
+          377.65838623046875
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(12.8)' does not appear verbatim in its own quote",
+    "subject_key": "express parcel shipments",
+    "metric_key": "growth rate"
+  },
+  {
+    "fact_id": "0ab0c6d1ef188442",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "46",
+      "value": 46.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 460000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 392,
+      "end": 397,
+      "quote": "₹46Cr",
+      "bboxes": [
+        [
+          379.9700012207031,
+          159.63619995117188,
+          465.5276184082031,
+          190.8115997314453
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "3d25ee86f7cafc53",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "13",
+      "value": 13.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 130000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 439,
+      "end": 445,
+      "quote": "₹13 Cr",
+      "bboxes": [
+        [
+          379.9700012207031,
+          213.2070770263672,
+          498.38812255859375,
+          225.54344177246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "ff9b0c1d99c1fa1b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA margin",
+    "metric": "EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "0.7",
+      "value": 0.7,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 0.7,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 448,
+      "end": 452,
+      "quote": "0.7%",
+      "bboxes": [
+        [
+          379.9700012207031,
+          213.2070770263672,
+          498.38812255859375,
+          225.54344177246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda margin",
+    "metric_key": "ebitda margin"
+  },
+  {
+    "fact_id": "09b1257d9e9ed81f",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA",
+    "metric": "EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "109",
+      "value": 109.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 1090000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 463,
+      "end": 470,
+      "quote": "₹109 Cr",
+      "bboxes": [
+        [
+          379.9700012207031,
+          230.41880798339844,
+          504.47918701171875,
+          242.72840881347656
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda",
+    "metric_key": "ebitda"
+  },
+  {
+    "fact_id": "e3ae62c84d589cbc",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "EBITDA margin",
+    "metric": "EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "5.0",
+      "value": 5.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 5.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 473,
+      "end": 477,
+      "quote": "5.0%",
+      "bboxes": [
+        [
+          379.9700012207031,
+          230.41880798339844,
+          504.47918701171875,
+          242.72840881347656
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "ebitda margin",
+    "metric_key": "ebitda margin"
+  },
+  {
+    "fact_id": "d88ce6da6ad4b924",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "21",
+      "value": 21.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 210000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 479,
+      "end": 485,
+      "quote": "₹21 Cr",
+      "bboxes": [
+        [
+          677.5900268554688,
+          159.63619995117188,
+          850.4389038085938,
+          190.8115997314453
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda"
+  },
+  {
+    "fact_id": "c817fbb3229f3b41",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA margin",
+    "metric": "Adj. EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "1.0",
+      "value": 1.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 1.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 488,
+      "end": 492,
+      "quote": "1.0%",
+      "bboxes": [
+        [
+          677.5900268554688,
+          159.63619995117188,
+          850.4389038085938,
+          190.8115997314453
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "adj. ebitda margin",
+    "metric_key": "adj. ebitda margin"
+  },
+  {
+    "fact_id": "13601a00e9a9565d",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "6",
+      "value": 6.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 60000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 537,
+      "end": 542,
+      "quote": "₹6 Cr",
+      "bboxes": [
+        [
+          677.5900268554688,
+          213.2070770263672,
+          789.8899536132812,
+          225.54344177246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda"
+  },
+  {
+    "fact_id": "f80e4a73e4dcda71",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA margin",
+    "metric": "Adj. EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "0.3",
+      "value": 0.3,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 0.3,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 545,
+      "end": 549,
+      "quote": "0.3%",
+      "bboxes": [
+        [
+          677.5900268554688,
+          213.2070770263672,
+          789.8899536132812,
+          225.54344177246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda margin",
+    "metric_key": "adj. ebitda margin"
+  },
+  {
+    "fact_id": "052989bea3581045",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA",
+    "metric": "Adj. EBITDA",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "92",
+      "value": 92.0,
+      "magnitude": "Cr",
+      "unit": "₹",
+      "canonical_value": 920000000.0,
+      "canonical_unit": "INR"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 560,
+      "end": 566,
+      "quote": "₹92 Cr",
+      "bboxes": [
+        [
+          677.5900268554688,
+          230.41880798339844,
+          795.9718627929688,
+          242.72840881347656
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda",
+    "metric_key": "adj. ebitda"
+  },
+  {
+    "fact_id": "5c522e4f1cc0d4ee",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Adj. EBITDA margin",
+    "metric": "Adj. EBITDA margin",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "4.2",
+      "value": 4.2,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 4.2,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 7,
+      "start": 569,
+      "end": 573,
+      "quote": "4.2%",
+      "bboxes": [
+        [
+          677.5900268554688,
+          230.41880798339844,
+          795.9718627929688,
+          242.72840881347656
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "adj. ebitda margin",
+    "metric_key": "adj. ebitda margin"
+  },
+  {
+    "fact_id": "b209e3f450896a9e",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Automated sort centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "24",
+      "value": 24.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 24.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 75,
+      "end": 77,
+      "quote": "24",
+      "bboxes": [
+        [
+          654.1199951171875,
+          112.25618743896484,
+          693.9600219726562,
+          123.36158752441406
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "automated sort centers"
+  },
+  {
+    "fact_id": "13803a58a1c5c731",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Pin-code reach",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18,074",
+      "value": 18074.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 18074.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 87,
+      "end": 111,
+      "quote": "Pin-code reach(1)\n18,074",
+      "bboxes": [
+        [
+          56.01599884033203,
+          138.44619750976562,
+          122.96794891357422,
+          149.5515899658203
+        ],
+        [
+          122.9800033569336,
+          138.37838745117188,
+          131.22544860839844,
+          145.85775756835938
+        ],
+        [
+          351.04998779296875,
+          138.44619750976562,
+          381.41864013671875,
+          149.5515899658203
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "pin-code reach"
+  },
+  {
+    "fact_id": "60603753c66774a4",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Pin-code reach",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18,540",
+      "value": 18540.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 18540.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 112,
+      "end": 118,
+      "quote": "18,540",
+      "bboxes": [
+        [
+          504.9800109863281,
+          138.44619750976562,
+          535.3487548828125,
+          149.5515899658203
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "pin-code reach"
+  },
+  {
+    "fact_id": "0e11cd60b9a8a5d6",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Pin-code reach",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18,675",
+      "value": 18675.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 18675.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 119,
+      "end": 125,
+      "quote": "18,675",
+      "bboxes": [
+        [
+          658.9199829101562,
+          138.44619750976562,
+          689.2886962890625,
+          149.5515899658203
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "pin-code reach"
+  },
+  {
+    "fact_id": "20dd09848248e8da",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Pin-code reach",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18,793",
+      "value": 18793.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 18793.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 126,
+      "end": 132,
+      "quote": "18,793",
+      "bboxes": [
+        [
+          812.8599853515625,
+          138.44619750976562,
+          843.2286987304688,
+          149.5515899658203
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "pin-code reach"
+  },
+  {
+    "fact_id": "d67dd1476a22dde0",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Countries and territories served",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "220+",
+      "value": 220.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 220.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 134,
+      "end": 174,
+      "quote": "Countries and territories served(2)\n220+",
+      "bboxes": [
+        [
+          56.01599884033203,
+          164.626220703125,
+          194.84844970703125,
+          175.7316131591797
+        ],
+        [
+          194.86000061035156,
+          164.55841064453125,
+          203.10543823242188,
+          172.03778076171875
+        ],
+        [
+          355.010009765625,
+          164.626220703125,
+          377.38653564453125,
+          175.7316131591797
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "countries and territories served"
+  },
+  {
+    "fact_id": "716b87dc5e261155",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Countries and territories served",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "220+",
+      "value": 220.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 220.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 170,
+      "end": 174,
+      "quote": "220+",
+      "bboxes": [
+        [
+          355.010009765625,
+          164.626220703125,
+          377.38653564453125,
+          175.7316131591797
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "countries and territories served"
+  },
+  {
+    "fact_id": "aae74b422337401a",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Number of Active Customers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "23,613",
+      "value": 23613.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 23613.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22",
+      "measure": "Active Customers for a quarter are those customers on whom an invoice was raised at least once during such quarter."
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 191,
+      "end": 225,
+      "quote": "No. of Active Customers(3) \n23,613",
+      "bboxes": [
+        [
+          56.01599884033203,
+          190.80621337890625,
+          163.52426147460938,
+          201.91160583496094
+        ],
+        [
+          163.66000366210938,
+          190.7384033203125,
+          173.79376220703125,
+          198.2177734375
+        ],
+        [
+          351.04998779296875,
+          190.80621337890625,
+          381.41864013671875,
+          201.91160583496094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "number of active customers"
+  },
+  {
+    "fact_id": "61b10c8c38d04a68",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Number of Active Customers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "27,253",
+      "value": 27253.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 27253.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23",
+      "measure": "Active Customers for a quarter are those customers on whom an invoice was raised at least once during such quarter."
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 226,
+      "end": 232,
+      "quote": "27,253",
+      "bboxes": [
+        [
+          504.9800109863281,
+          190.80621337890625,
+          535.3487548828125,
+          201.91160583496094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "number of active customers"
+  },
+  {
+    "fact_id": "7522da3596f9a584",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Number of Active Customers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "30,598",
+      "value": 30598.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 30598.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24",
+      "measure": "Active Customers for a quarter are those customers on whom an invoice was raised at least once during such quarter."
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 233,
+      "end": 239,
+      "quote": "30,598",
+      "bboxes": [
+        [
+          658.9199829101562,
+          190.80621337890625,
+          689.2886962890625,
+          201.91160583496094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "number of active customers"
+  },
+  {
+    "fact_id": "d8f931b5ec672b12",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Automated sort centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "30",
+      "value": 30.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 30.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 233,
+      "end": 235,
+      "quote": "30",
+      "bboxes": [
+        [
+          658.9199829101562,
+          190.80621337890625,
+          689.2886962890625,
+          201.91160583496094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "automated sort centers"
+  },
+  {
+    "fact_id": "6068b8f4c0913939",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Number of Active Customers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "33,278",
+      "value": 33278.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 33278.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "Active Customers for a quarter are those customers on whom an invoice was raised at least once during such quarter."
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 240,
+      "end": 246,
+      "quote": "33,278",
+      "bboxes": [
+        [
+          812.8599853515625,
+          190.80621337890625,
+          843.2286987304688,
+          201.91160583496094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "number of active customers"
+  },
+  {
+    "fact_id": "a94e7b93509863a9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Infrastructure",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18.15",
+      "value": 18.15,
+      "magnitude": "million",
+      "unit": "sq ft.",
+      "canonical_value": 18150000.0,
+      "canonical_unit": "sq ft."
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 248,
+      "end": 288,
+      "quote": "Infrastructure (in million sq ft.)\n18.15",
+      "bboxes": [
+        [
+          56.01599884033203,
+          216.9962158203125,
+          187.24893188476562,
+          228.1016082763672
+        ],
+        [
+          353.80999755859375,
+          216.9962158203125,
+          378.65869140625,
+          228.1016082763672
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "infrastructure"
+  },
+  {
+    "fact_id": "91aa4ee1a8dfcbbc",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Infrastructure",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "17.99",
+      "value": 17.99,
+      "magnitude": "million",
+      "unit": "sq ft.",
+      "canonical_value": 17990000.0,
+      "canonical_unit": "sq ft."
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 289,
+      "end": 294,
+      "quote": "17.99",
+      "bboxes": [
+        [
+          507.739990234375,
+          216.9962158203125,
+          532.5887451171875,
+          228.1016082763672
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "infrastructure"
+  },
+  {
+    "fact_id": "fb9dad3f57effd65",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Infrastructure",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "19.24",
+      "value": 19.24,
+      "magnitude": "million",
+      "unit": "sq ft.",
+      "canonical_value": 19240000.0,
+      "canonical_unit": "sq ft."
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 295,
+      "end": 300,
+      "quote": "19.24",
+      "bboxes": [
+        [
+          661.6799926757812,
+          216.9962158203125,
+          686.5287475585938,
+          228.1016082763672
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "infrastructure"
+  },
+  {
+    "fact_id": "0c866a70ba705580",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Infrastructure",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "18.82",
+      "value": 18.82,
+      "magnitude": "million",
+      "unit": "sq ft.",
+      "canonical_value": 18820000.0,
+      "canonical_unit": "sq ft."
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 301,
+      "end": 306,
+      "quote": "18.82",
+      "bboxes": [
+        [
+          815.6199951171875,
+          216.9962158203125,
+          840.46875,
+          228.1016082763672
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "infrastructure"
+  },
+  {
+    "fact_id": "e1b33336fc2d9a24",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Gateways",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "123",
+      "value": 123.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 123.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 308,
+      "end": 320,
+      "quote": "Gateways\n123",
+      "bboxes": [
+        [
+          56.01599884033203,
+          243.17620849609375,
+          99.86988830566406,
+          254.28160095214844
+        ],
+        [
+          357.8900146484375,
+          243.17620849609375,
+          374.4676818847656,
+          254.28160095214844
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "gateways"
+  },
+  {
+    "fact_id": "e2af2c0c00a2e452",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Gateways",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "94",
+      "value": 94.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 94.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 321,
+      "end": 323,
+      "quote": "94",
+      "bboxes": [
+        [
+          514.5800170898438,
+          243.17620849609375,
+          525.6377563476562,
+          254.28160095214844
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "gateways"
+  },
+  {
+    "fact_id": "cfd63045d1426dac",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Gateways",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "110",
+      "value": 110.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 110.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 324,
+      "end": 327,
+      "quote": "110",
+      "bboxes": [
+        [
+          665.760009765625,
+          243.17620849609375,
+          682.3377075195312,
+          254.28160095214844
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "gateways"
+  },
+  {
+    "fact_id": "89dbe894a56188c4",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Gateways",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "111",
+      "value": 111.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 111.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 328,
+      "end": 331,
+      "quote": "111",
+      "bboxes": [
+        [
+          819.7000122070312,
+          243.17620849609375,
+          836.2777099609375,
+          254.28160095214844
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "gateways"
+  },
+  {
+    "fact_id": "affb2b8f1837ab1b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Automated sort centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "21",
+      "value": 21.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 21.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 333,
+      "end": 358,
+      "quote": "Automated sort centers\n21",
+      "bboxes": [
+        [
+          56.01599884033203,
+          269.3662109375,
+          158.75341796875,
+          280.47161865234375
+        ],
+        [
+          360.6499938964844,
+          269.3662109375,
+          371.70770263671875,
+          280.47161865234375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "automated sort centers"
+  },
+  {
+    "fact_id": "dc6081710aab5a77",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Automated sort centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "29",
+      "value": 29.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 29.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 365,
+      "end": 367,
+      "quote": "29",
+      "bboxes": [
+        [
+          822.4600219726562,
+          269.3662109375,
+          833.5177612304688,
+          280.47161865234375
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "automated sort centers"
+  },
+  {
+    "fact_id": "4baf5f7c68a4be26",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Freight service centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "267",
+      "value": 267.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 267.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 369,
+      "end": 396,
+      "quote": "Freight service centers\n267",
+      "bboxes": [
+        [
+          56.01599884033203,
+          295.54620361328125,
+          156.78134155273438,
+          306.651611328125
+        ],
+        [
+          357.8900146484375,
+          295.54620361328125,
+          374.4676818847656,
+          306.651611328125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "freight service centers"
+  },
+  {
+    "fact_id": "29af22dc52063a17",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Freight service centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "141",
+      "value": 141.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 141.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 397,
+      "end": 400,
+      "quote": "141",
+      "bboxes": [
+        [
+          511.82000732421875,
+          295.54620361328125,
+          528.397705078125,
+          306.651611328125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "freight service centers"
+  },
+  {
+    "fact_id": "d3f688feadad0d98",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Freight service centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "131",
+      "value": 131.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 131.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 401,
+      "end": 404,
+      "quote": "131",
+      "bboxes": [
+        [
+          665.760009765625,
+          295.54620361328125,
+          682.3377075195312,
+          306.651611328125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "freight service centers"
+  },
+  {
+    "fact_id": "dc36919bc7c39273",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Freight service centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "129",
+      "value": 129.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 129.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 405,
+      "end": 408,
+      "quote": "129",
+      "bboxes": [
+        [
+          819.7000122070312,
+          295.54620361328125,
+          836.2777099609375,
+          306.651611328125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "freight service centers"
+  },
+  {
+    "fact_id": "ca0fc76628e1b405",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Express delivery centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "2,961",
+      "value": 2961.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 2961.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 410,
+      "end": 440,
+      "quote": "Express delivery centers\n2,961",
+      "bboxes": [
+        [
+          56.01599884033203,
+          321.6844787597656,
+          164.51206970214844,
+          332.816650390625
+        ],
+        [
+          353.80999755859375,
+          321.6844787597656,
+          378.6802062988281,
+          332.816650390625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "express delivery centers"
+  },
+  {
+    "fact_id": "a0abeefe70846972",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Express delivery centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "2,880",
+      "value": 2880.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 2880.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 441,
+      "end": 446,
+      "quote": "2,880",
+      "bboxes": [
+        [
+          507.739990234375,
+          321.6844787597656,
+          532.6100463867188,
+          332.816650390625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "express delivery centers"
+  },
+  {
+    "fact_id": "5f3bbd6e86599dc5",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Express delivery centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "3,404",
+      "value": 3404.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 3404.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 447,
+      "end": 452,
+      "quote": "3,404",
+      "bboxes": [
+        [
+          661.6799926757812,
+          321.6844787597656,
+          686.550048828125,
+          332.816650390625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "express delivery centers"
+  },
+  {
+    "fact_id": "ad597e9f306dbfa8",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Express delivery centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "3,506",
+      "value": 3506.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 3506.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 453,
+      "end": 458,
+      "quote": "3,506",
+      "bboxes": [
+        [
+          815.6199951171875,
+          321.6844787597656,
+          840.4900512695312,
+          332.816650390625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "express delivery centers"
+  },
+  {
+    "fact_id": "240b6ba058897207",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "1,224",
+      "value": 1224.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 1224.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22",
+      "segment": "constellation/BAs"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 460,
+      "end": 501,
+      "quote": "Partner centers (constellation/BAs)\n1,224",
+      "bboxes": [
+        [
+          56.01599884033203,
+          347.8644714355469,
+          209.62979125976562,
+          358.99664306640625
+        ],
+        [
+          353.80999755859375,
+          347.8644714355469,
+          378.6802062988281,
+          358.99664306640625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner centers"
+  },
+  {
+    "fact_id": "43e11893a2505b4a",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "1,175",
+      "value": 1175.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 1175.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23",
+      "segment": "constellation/BAs"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 502,
+      "end": 507,
+      "quote": "1,175",
+      "bboxes": [
+        [
+          507.739990234375,
+          347.8644714355469,
+          532.6100463867188,
+          358.99664306640625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner centers"
+  },
+  {
+    "fact_id": "c76e252a3c2cf389",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "993",
+      "value": 993.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 993.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24",
+      "segment": "constellation/BAs"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 508,
+      "end": 511,
+      "quote": "993",
+      "bboxes": [
+        [
+          665.760009765625,
+          347.8644714355469,
+          682.3511352539062,
+          358.99664306640625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner centers"
+  },
+  {
+    "fact_id": "d91ad8c1212753bf",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "939",
+      "value": 939.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 939.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "constellation/BAs"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 512,
+      "end": 515,
+      "quote": "939",
+      "bboxes": [
+        [
+          819.7000122070312,
+          347.8644714355469,
+          836.2911376953125,
+          358.99664306640625
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner centers"
+  },
+  {
+    "fact_id": "c30dff99ee1fb604",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Processing centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "178",
+      "value": 178.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 178.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 517,
+      "end": 539,
+      "quote": "Processing centers\n178",
+      "bboxes": [
+        [
+          56.01599884033203,
+          374.0762023925781,
+          140.5963134765625,
+          385.1816101074219
+        ],
+        [
+          357.8900146484375,
+          374.0762023925781,
+          374.4676818847656,
+          385.1816101074219
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "processing centers"
+  },
+  {
+    "fact_id": "d36a4066d5b6d9bc",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Processing centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "174",
+      "value": 174.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 174.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 540,
+      "end": 543,
+      "quote": "174",
+      "bboxes": [
+        [
+          511.82000732421875,
+          374.0762023925781,
+          528.397705078125,
+          385.1816101074219
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "processing centers"
+  },
+  {
+    "fact_id": "95c260fb0b9a2142",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Processing centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "164",
+      "value": 164.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 164.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 544,
+      "end": 547,
+      "quote": "164",
+      "bboxes": [
+        [
+          665.760009765625,
+          374.0762023925781,
+          682.3377075195312,
+          385.1816101074219
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "processing centers"
+  },
+  {
+    "fact_id": "7b324526db42bb8d",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Processing centers",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "160",
+      "value": 160.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 160.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 548,
+      "end": 551,
+      "quote": "160",
+      "bboxes": [
+        [
+          819.7000122070312,
+          374.0762023925781,
+          836.2777099609375,
+          385.1816101074219
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "processing centers"
+  },
+  {
+    "fact_id": "a80b86d74bd8fd30",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Team size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "60,373",
+      "value": 60373.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 60373.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22",
+      "vintage": "as of the last day of the relevant period",
+      "measure": "Includes permanent employees and contractual workers (excluding partner agents, daily wage manpower and security guards)"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 553,
+      "end": 572,
+      "quote": "Team size(4)\n60,373",
+      "bboxes": [
+        [
+          56.01599884033203,
+          400.2562255859375,
+          101.7224349975586,
+          411.36163330078125
+        ],
+        [
+          101.73999786376953,
+          400.18841552734375,
+          109.98544311523438,
+          407.66778564453125
+        ],
+        [
+          351.04998779296875,
+          400.2562255859375,
+          381.41864013671875,
+          411.36163330078125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "team size"
+  },
+  {
+    "fact_id": "26ff92a972b58cd2",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Team size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "57,307",
+      "value": 57307.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 57307.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23",
+      "vintage": "as of the last day of the relevant period",
+      "measure": "Includes permanent employees and contractual workers (excluding partner agents, daily wage manpower and security guards)"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 573,
+      "end": 579,
+      "quote": "57,307",
+      "bboxes": [
+        [
+          504.9800109863281,
+          400.2562255859375,
+          535.3487548828125,
+          411.36163330078125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "team size"
+  },
+  {
+    "fact_id": "02666bb89eb37e94",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Team size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "63,144",
+      "value": 63144.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 63144.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24",
+      "vintage": "as of the last day of the relevant period",
+      "measure": "Includes permanent employees and contractual workers (excluding partner agents, daily wage manpower and security guards)"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 580,
+      "end": 586,
+      "quote": "63,144",
+      "bboxes": [
+        [
+          658.9199829101562,
+          400.2562255859375,
+          689.2886962890625,
+          411.36163330078125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "team size"
+  },
+  {
+    "fact_id": "fc5b85548b709a68",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Team size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "63,713",
+      "value": 63713.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 63713.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "vintage": "as of the last day of the relevant period",
+      "measure": "Includes permanent employees and contractual workers (excluding partner agents, daily wage manpower and security guards)"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 587,
+      "end": 593,
+      "quote": "63,713",
+      "bboxes": [
+        [
+          812.8599853515625,
+          400.2562255859375,
+          843.2286987304688,
+          411.36163330078125
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "team size"
+  },
+  {
+    "fact_id": "b1df3315f94bc24d",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner agents",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "34,360",
+      "value": 34360.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 34360.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22",
+      "measure": "Count of last mile delivery partner agents in the last month of the relevant period"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 595,
+      "end": 619,
+      "quote": "Partner agents(5)\n34,360",
+      "bboxes": [
+        [
+          56.01599884033203,
+          426.4461975097656,
+          121.26396179199219,
+          437.5516052246094
+        ],
+        [
+          121.30000305175781,
+          426.3783874511719,
+          129.54544067382812,
+          433.8577575683594
+        ],
+        [
+          351.04998779296875,
+          426.4461975097656,
+          381.41864013671875,
+          437.5516052246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner agents"
+  },
+  {
+    "fact_id": "6d9c82cb313ab649",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner agents",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "34,987",
+      "value": 34987.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 34987.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23",
+      "measure": "Count of last mile delivery partner agents in the last month of the relevant period"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 620,
+      "end": 626,
+      "quote": "34,987",
+      "bboxes": [
+        [
+          504.9800109863281,
+          426.4461975097656,
+          535.3487548828125,
+          437.5516052246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner agents"
+  },
+  {
+    "fact_id": "12144a4d24228b07",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner agents",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "37,172",
+      "value": 37172.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 37172.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24",
+      "measure": "Count of last mile delivery partner agents in the last month of the relevant period"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 627,
+      "end": 633,
+      "quote": "37,172",
+      "bboxes": [
+        [
+          658.9199829101562,
+          426.4461975097656,
+          689.2886962890625,
+          437.5516052246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner agents"
+  },
+  {
+    "fact_id": "7a478b7b8cd2fc47",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Partner agents",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "34,422",
+      "value": 34422.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 34422.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "Count of last mile delivery partner agents in the last month of the relevant period"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 634,
+      "end": 640,
+      "quote": "34,422",
+      "bboxes": [
+        [
+          812.8599853515625,
+          426.4461975097656,
+          843.2286987304688,
+          437.5516052246094
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "partner agents"
+  },
+  {
+    "fact_id": "84ad7487186e6ba7",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Fleet size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "9,120",
+      "value": 9120.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 9120.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY22",
+      "measure": "daily average"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 642,
+      "end": 674,
+      "quote": "Fleet size – daily average\n9,120",
+      "bboxes": [
+        [
+          56.01599884033203,
+          452.626220703125,
+          168.83238220214844,
+          463.73162841796875
+        ],
+        [
+          353.80999755859375,
+          452.626220703125,
+          378.65869140625,
+          463.73162841796875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "fleet size"
+  },
+  {
+    "fact_id": "bad339c2e1891e6b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Fleet size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "11,105",
+      "value": 11105.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 11105.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY23",
+      "measure": "daily average"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 675,
+      "end": 681,
+      "quote": "11,105",
+      "bboxes": [
+        [
+          504.9800109863281,
+          452.626220703125,
+          535.3487548828125,
+          463.73162841796875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "fleet size"
+  },
+  {
+    "fact_id": "bf9970c4c387f0c9",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Fleet size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "13,688",
+      "value": 13688.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 13688.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q3 FY24",
+      "measure": "daily average"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 682,
+      "end": 688,
+      "quote": "13,688",
+      "bboxes": [
+        [
+          658.9199829101562,
+          452.626220703125,
+          689.2886962890625,
+          463.73162841796875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "fleet size"
+  },
+  {
+    "fact_id": "4f49d811ce49a444",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Delhivery",
+    "metric": "Fleet size",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "15,065",
+      "value": 15065.0,
+      "magnitude": null,
+      "unit": null,
+      "canonical_value": 15065.0,
+      "canonical_unit": "count"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "daily average"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 8,
+      "start": 689,
+      "end": 695,
+      "quote": "15,065",
+      "bboxes": [
+        [
+          812.8599853515625,
+          452.626220703125,
+          843.2286987304688,
+          463.73162841796875
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "delhivery",
+    "metric_key": "fleet size"
+  },
+  {
+    "fact_id": "1d0f69e96c80bec7",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Revenue from services",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "12",
+      "value": 12.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 12.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "basis": "excludes revenue from traded goods",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 172,
+      "end": 180,
+      "quote": "YoY: 12%",
+      "bboxes": [
+        [
+          152.66000366210938,
+          115.93000793457031,
+          183.23599243164062,
+          129.3100128173828
+        ],
+        [
+          183.3800048828125,
+          115.93000793457031,
+          207.48800659179688,
+          129.3100128173828
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "revenue from services",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "7309750ad851471e",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Revenue from services",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(5)",
+      "value": -5.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -5.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "basis": "excludes revenue from traded goods",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 182,
+      "end": 191,
+      "quote": "QoQ: (5%)",
+      "bboxes": [
+        [
+          202.82000732421875,
+          128.98828125,
+          236.2826690673828,
+          142.39503479003906
+        ],
+        [
+          236.3000030517578,
+          128.98828125,
+          261.54400634765625,
+          142.39503479003906
+        ]
+      ]
+    },
+    "confidence": 0.36,
+    "notes": "value '(5)' does not appear verbatim in its own quote",
+    "subject_key": "revenue from services",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "175186f9da5c222b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express Parcel revenue",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "3",
+      "value": 3.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 3.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "Express Parcel",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 360,
+      "end": 367,
+      "quote": "YoY: 3%",
+      "bboxes": [
+        [
+          489.70001220703125,
+          114.18000793457031,
+          520.2960205078125,
+          127.56000518798828
+        ],
+        [
+          520.4400024414062,
+          114.18000793457031,
+          537.8280029296875,
+          127.56000518798828
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "express parcel revenue",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "b48faf20e4bfa147",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express Parcel shipments",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(2)",
+      "value": -2.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -2.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "Express Parcel",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 368,
+      "end": 377,
+      "quote": "YoY: (2%)",
+      "bboxes": [
+        [
+          781.5599975585938,
+          117.37001037597656,
+          812.135986328125,
+          130.75001525878906
+        ],
+        [
+          812.280029296875,
+          117.37001037597656,
+          837.5399780273438,
+          130.75001525878906
+        ]
+      ]
+    },
+    "confidence": 0.36,
+    "notes": "value '(2)' does not appear verbatim in its own quote",
+    "subject_key": "express parcel shipments",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "d96c5b5793ad2b14",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express Parcel revenue",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(13)",
+      "value": -13.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -13.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "Express Parcel",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 383,
+      "end": 393,
+      "quote": "QoQ: (13%)",
+      "bboxes": [
+        [
+          813.3400268554688,
+          134.24000549316406,
+          846.7960205078125,
+          147.62001037597656
+        ],
+        [
+          846.8200073242188,
+          134.24000549316406,
+          878.7759399414062,
+          147.62001037597656
+        ]
+      ]
+    },
+    "confidence": 0.36,
+    "notes": "value '(13)' does not appear verbatim in its own quote",
+    "subject_key": "express parcel revenue",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "9b040b1c5188e4c7",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Express Parcel shipments",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(16)",
+      "value": -16.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -16.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "Express Parcel",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 395,
+      "end": 405,
+      "quote": "QoQ: (16%)",
+      "bboxes": [
+        [
+          522.0,
+          125.53001403808594,
+          555.4559936523438,
+          138.91001892089844
+        ],
+        [
+          555.47998046875,
+          125.53001403808594,
+          587.4239501953125,
+          138.91001892089844
+        ]
+      ]
+    },
+    "confidence": 0.36,
+    "notes": "value '(16)' does not appear verbatim in its own quote",
+    "subject_key": "express parcel shipments",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "40387e66e4d5db03",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight revenue",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "27",
+      "value": 27.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 27.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "PTL",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 700,
+      "end": 708,
+      "quote": "YoY: 27%",
+      "bboxes": [
+        [
+          488.1400146484375,
+          341.3900146484375,
+          518.7160034179688,
+          354.7699890136719
+        ],
+        [
+          518.8599853515625,
+          341.3900146484375,
+          542.9679565429688,
+          354.7699890136719
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ptl freight revenue",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "adeafe845d6c7661",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "21",
+      "value": 21.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 21.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "PTL",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 709,
+      "end": 717,
+      "quote": "YoY: 21%",
+      "bboxes": [
+        [
+          777.02001953125,
+          340.760009765625,
+          807.6259765625,
+          354.1399841308594
+        ],
+        [
+          807.77001953125,
+          340.760009765625,
+          831.8780517578125,
+          354.1399841308594
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "45b8e57ec656026c",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight revenue",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "9",
+      "value": 9.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 9.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "PTL",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 719,
+      "end": 726,
+      "quote": "QoQ: 9%",
+      "bboxes": [
+        [
+          818.1099853515625,
+          372.280029296875,
+          851.5659790039062,
+          385.6600036621094
+        ],
+        [
+          851.5900268554688,
+          372.280029296875,
+          868.97802734375,
+          385.6600036621094
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ptl freight revenue",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "58b5c1207096682b",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "PTL freight tonnage",
+    "metric": "Growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "10",
+      "value": 10.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 10.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "segment": "PTL",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 11,
+      "start": 728,
+      "end": 736,
+      "quote": "QoQ: 10%",
+      "bboxes": [
+        [
+          523.9000244140625,
+          371.8699951171875,
+          557.3560180664062,
+          385.2499694824219
+        ],
+        [
+          557.3800048828125,
+          371.8699951171875,
+          581.4879760742188,
+          385.2499694824219
+        ]
+      ]
+    },
+    "confidence": 0.9,
+    "notes": null,
+    "subject_key": "ptl freight tonnage",
+    "metric_key": "growth"
+  },
+  {
+    "fact_id": "ba726253043c6b4f",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Cross Border Services revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "59",
+      "value": 59.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 59.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 205,
+      "end": 213,
+      "quote": "YoY: 59%",
+      "bboxes": [
+        [
+          471.70001220703125,
+          114.31999206542969,
+          502.26397705078125,
+          127.69998931884766
+        ],
+        [
+          502.4200134277344,
+          114.31999206542969,
+          526.5280151367188,
+          127.69998931884766
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "cross border services revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "8a299d621043e017",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "TL Service revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "25",
+      "value": 25.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 25.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 214,
+      "end": 222,
+      "quote": "YoY: 25%",
+      "bboxes": [
+        [
+          778.25,
+          116.08000183105469,
+          808.8140258789062,
+          129.4600067138672
+        ],
+        [
+          808.969970703125,
+          116.08000183105469,
+          833.0780029296875,
+          129.4600067138672
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "tl service revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "4aedace465b686c1",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Supply Chain Services revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(46)",
+      "value": -46.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -46.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 224,
+      "end": 234,
+      "quote": "YoY: (46%)",
+      "bboxes": [
+        [
+          618.6199951171875,
+          343.280029296875,
+          649.1840209960938,
+          356.6600036621094
+        ],
+        [
+          649.3400268554688,
+          343.280029296875,
+          681.2959594726562,
+          356.6600036621094
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(46)' does not appear verbatim in its own quote",
+    "subject_key": "supply chain services revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "6fe4c5111de27842",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Cross Border Services revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "14",
+      "value": 14.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 14.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 276,
+      "end": 284,
+      "quote": "QoQ: 14%",
+      "bboxes": [
+        [
+          508.25,
+          147.84999084472656,
+          541.7059936523438,
+          161.22999572753906
+        ],
+        [
+          541.72998046875,
+          147.84999084472656,
+          565.8380126953125,
+          161.22999572753906
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "cross border services revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "26eed1f3eae034ae",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "TL Service revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "36",
+      "value": 36.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 36.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 286,
+      "end": 294,
+      "quote": "QoQ: 36%",
+      "bboxes": [
+        [
+          817.2000122070312,
+          136.99998474121094,
+          850.676025390625,
+          150.37998962402344
+        ],
+        [
+          850.7000122070312,
+          136.99998474121094,
+          874.8079833984375,
+          150.37998962402344
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "tl service revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "b776581a254e78d8",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Supply Chain Services revenue",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(21)",
+      "value": -21.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -21.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 296,
+      "end": 306,
+      "quote": "QoQ: (21%)",
+      "bboxes": [
+        [
+          658.6799926757812,
+          383.8000183105469,
+          692.135986328125,
+          397.17999267578125
+        ],
+        [
+          692.1599731445312,
+          383.8000183105469,
+          724.115966796875,
+          397.17999267578125
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(21)' does not appear verbatim in its own quote",
+    "subject_key": "supply chain services revenue",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "5fe8aee840d63866",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Revenue from services",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "12",
+      "value": 12.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": 12.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "basis": "excludes revenue from traded goods",
+      "measure": "YoY"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 630,
+      "end": 638,
+      "quote": "YoY: 12%",
+      "bboxes": [
+        [
+          152.66000366210938,
+          115.93000793457031,
+          183.23599243164062,
+          129.3100128173828
+        ],
+        [
+          183.3800048828125,
+          115.93000793457031,
+          207.48800659179688,
+          129.3100128173828
+        ]
+      ]
+    },
+    "confidence": 1.0,
+    "notes": null,
+    "subject_key": "revenue from services",
+    "metric_key": "revenue growth"
+  },
+  {
+    "fact_id": "2cdc5d6b2fdaf2d8",
+    "doc_id": "5ca307085c96c1fc",
+    "subject": "Revenue from services",
+    "metric": "Revenue growth",
+    "fact_type": "quantity",
+    "quantity": {
+      "raw": "(5)",
+      "value": -5.0,
+      "magnitude": null,
+      "unit": "%",
+      "canonical_value": -5.0,
+      "canonical_unit": "percent"
+    },
+    "value_text": null,
+    "context": {
+      "period": "Q4 FY24",
+      "basis": "excludes revenue from traded goods",
+      "measure": "QoQ"
+    },
+    "valid_from": null,
+    "valid_to": null,
+    "evidence": {
+      "doc_id": "5ca307085c96c1fc",
+      "filename": "03-delhivery-q4-fy24-earnings-presentation.pdf",
+      "page": 12,
+      "start": 640,
+      "end": 649,
+      "quote": "QoQ: (5%)",
+      "bboxes": [
+        [
+          202.82000732421875,
+          128.98828125,
+          236.2826690673828,
+          142.39503479003906
+        ],
+        [
+          236.3000030517578,
+          128.98828125,
+          261.54400634765625,
+          142.39503479003906
+        ]
+      ]
+    },
+    "confidence": 0.4,
+    "notes": "value '(5)' does not appear verbatim in its own quote",
+    "subject_key": "revenue from services",
+    "metric_key": "revenue growth"
+  }
+]

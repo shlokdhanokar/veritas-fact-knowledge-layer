@@ -121,7 +121,7 @@ PDF
 ### LLM provider
 | Provider | Model | Cost | Role |
 |---|---|---|---|
-| Google Gemini (AI Studio) | `gemini-3.6-flash` | **free** | default |
+| Google Gemini (AI Studio) | `gemini-2.5-flash` | **free** | default |
 | Groq | `llama-3.3-70b-versatile` | free | fallback |
 | Anthropic | `claude-opus-5` | paid | optional, highest quality |
 
@@ -140,16 +140,16 @@ Agile: every step ends with a runnable test before moving on.
 
 ### Phase 1 — Grounding layer (no LLM yet)
 - [x] `pdf_parser.py` — extract text per page with char offsets and bboxes
-- [ ] `segmenter.py` — split into evidence units (paragraph / table row)
+- [x] `segmenter.py` — split into evidence units (paragraph / table row)
 - [x] **TEST:** given a quote, resolve it back to page + bbox in the source PDF
 - [x] **TEST:** all 6 starter PDFs parse without error, report unit counts
 
 ### Phase 2 — Extraction
 - [x] `llm/provider.py` — provider abstraction (Gemini / Groq / Anthropic)
 - [x] `schema.py` — typed Fact model with context keys
-- [ ] `extractor.py` — evidence unit → list of Facts, structured output
-- [ ] **TEST:** run on Q4 deck (27pp, cheapest); inspect claim quality by hand
-- [ ] **TEST:** every extracted fact's quote is verbatim-present in its evidence unit
+- [x] `extractor.py` — evidence unit → list of Facts, structured output
+- [x] **TEST:** run on Q4 deck (27pp, cheapest); inspect claim quality by hand
+- [x] **TEST:** every extracted fact's quote is verbatim-present in its evidence unit
 
 ### Phase 3 — Normalization
 - [x] `normalize/units.py` — crore/lakh/million/billion, ₹/$/%
@@ -173,6 +173,7 @@ Agile: every step ends with a runnable test before moving on.
 - [ ] **TEST:** upload a PDF the system has never seen; verify end-to-end
 
 ### Phase 6 — Ship
+- [x] Extraction cache (content-addressed; makes incremental ingest work)
 - [ ] Incremental ingest (new doc compares only against candidates) — brownie point
 - [ ] README: Setup, Video Demo, Approach, Limitations & Next Steps, Additional Notes
 - [ ] Record 3-minute demo video (scripted: 20s arch / 30s ingest / 90s four cases / 20s limits)

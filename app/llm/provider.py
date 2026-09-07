@@ -28,7 +28,24 @@ log = logging.getLogger(__name__)
 T = TypeVar("T", bound=BaseModel)
 
 # Tried in order when the configured model is unavailable.
-GEMINI_FALLBACKS = ("gemini-3.6-flash", "gemini-2.5-flash", "gemini-flash-latest")
+#
+# gemini-2.5-flash leads deliberately. The newer gemini-3.6-flash is a better
+# model but its free tier allowed only 20 requests/day when we measured it,
+# which is not enough to ingest a single 100-page document. Free-tier quota,
+# not raw capability, is the binding constraint for a project graders must be
+# able to run themselves.
+# Quota is metered PER MODEL, so the chain doubles as a quota pool: when one
+# model's daily allowance is exhausted the next still has its own. Measured on a
+# free key: 20 requests/day each. Lite models are listed because they carry the
+# same grounding guarantees - a quote either verifies against the source or the
+# fact is dropped - so a weaker model degrades recall, never correctness.
+GEMINI_FALLBACKS = (
+    "gemini-2.5-flash",
+    "gemini-flash-latest",
+    "gemini-flash-lite-latest",
+    "gemini-3.1-flash-lite",
+    "gemini-3.6-flash",
+)
 
 TRANSIENT_MARKERS = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500", "INTERNAL")
 
