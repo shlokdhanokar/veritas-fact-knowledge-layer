@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Veritas — Fact Knowledge Layer</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+<div class="shell">
+
+  <header class="masthead">
+    <h1 class="wordmark">VERI<span>TAS</span></h1>
+    <p class="tagline">every claim, traced to the page it came from</p>
+    <div class="counters">
+      <div class="counter"><b id="n-docs">—</b><span>documents</span></div>
+      <div class="counter"><b id="n-pages">—</b><span>pages</span></div>
+      <div class="counter"><b id="n-facts">—</b><span>facts</span></div>
+      <div class="counter"><b id="n-rels">—</b><span>judgements</span></div>
+    </div>
+  </header>
+
+  <div class="layout">
+
+    <aside class="sidebar">
+      <section>
+        <p class="eyebrow">Add a document</p>
+        <label class="dropzone" id="dropzone">
+          <input type="file" id="file" accept="application/pdf">
+          <strong>Drop a PDF here</strong>
+          <small>or click to choose</small>
+        </label>
+        <div id="job" class="job" hidden></div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Knowledge layer</p>
+        <div id="docs"></div>
+      </section>
+    </aside>
+
+    <main class="main">
+      <div class="filters" id="filters">
+        <button class="tab" data-view="CONTRADICTS" aria-pressed="false">
+          <i class="dot" style="background:var(--contradict)"></i>Contradicts <em class="n"></em>
+        </button>
+        <button class="tab" data-view="LIKELY_CONTRADICTS" aria-pressed="false">
+          <i class="dot" style="background:var(--likely)"></i>Likely <em class="n"></em>
+        </button>
+        <button class="tab" data-view="RECONCILED" aria-pressed="true">
+          <i class="dot" style="background:var(--reconcile)"></i>Reconciled <em class="n"></em>
+        </button>
+        <button class="tab" data-view="CORROBORATES" aria-pressed="false">
+          <i class="dot" style="background:var(--corroborate)"></i>Corroborates <em class="n"></em>
+        </button>
+        <button class="tab" data-view="FACTS" aria-pressed="false">All facts</button>
+
+        <label class="toggle">
+          <input type="checkbox" id="crossdoc"> across documents only
+        </label>
+      </div>
+
+      <input class="searchbox" id="search" placeholder="Filter facts by subject, metric, or context…" hidden>
+
+      <div id="results"></div>
+      <button class="more" id="more" hidden>Load more</button>
+    </main>
+
+  </div>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>

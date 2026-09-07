@@ -173,14 +173,14 @@ Agile: every step ends with a runnable test before moving on.
 - [x] **TEST:** Case 4 (director) → temporal, both valid
 
 ### Phase 5 — Storage + API + UI
-- [ ] `db.py` — SQLite schema: documents, evidence, facts, relations
-- [ ] `main.py` — FastAPI: POST /documents, GET /facts, GET /relations, GET /evidence/{id}
-- [ ] Minimal UI: upload, fact table, evidence panel, relation view with reasoning
-- [ ] **TEST:** upload a PDF the system has never seen; verify end-to-end
+- [x] `db.py` — SQLite schema: documents, evidence, facts, relations
+- [x] `main.py` — FastAPI: POST /documents, GET /facts, GET /relations, GET /evidence/{id}
+- [x] Minimal UI: upload, fact table, evidence panel, relation view with reasoning
+- [x] **TEST:** upload a PDF the system has never seen; verify end-to-end
 
 ### Phase 6 — Ship
 - [x] Extraction cache (content-addressed; makes incremental ingest work)
-- [ ] Incremental ingest (new doc compares only against candidates) — brownie point
+- [x] Incremental ingest (new doc compares only against candidates) — brownie point
 - [ ] README: Setup, Video Demo, Approach, Limitations & Next Steps, Additional Notes
 - [ ] Record 3-minute demo video (scripted: 20s arch / 30s ingest / 90s four cases / 20s limits)
 - [ ] Final commit, push, submit form by 10:00 AM 09-09
