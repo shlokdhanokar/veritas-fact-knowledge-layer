@@ -156,15 +156,15 @@ Agile: every step ends with a runnable test before moving on.
 - [ ] `normalize/periods.py` — FY24, FY2024/25, Q4 FY24, "as of Dec 31 2021"
 - [ ] `normalize/entities.py` — alias resolution
 - [x] **TEST:** unit table — 8,142 Cr == 81,420 Mn (23 tests)
-- [ ] **TEST:** period table — FY24 == FY2023-24, Q4 FY24 nested in FY24
+- [x] **TEST:** period table — FY24 == FY2023-24, Q4 FY24 nested in FY24
 
 ### Phase 4 — Reasoning engine
-- [ ] `pairing.py` — candidate fact pairs via subject+metric blocking
-- [ ] `adjudicate.py` — the context-key rule + LLM for ambiguous pairs
-- [ ] **TEST:** Case 2 (standalone vs consolidated) → RECONCILED, not CONTRADICTS
-- [ ] **TEST:** Case 1 (Mn vs Cr) → CORROBORATES
-- [ ] **TEST:** Case 3 (GDP vintage) → RECONCILED
-- [ ] **TEST:** Case 4 (director) → temporal, both valid
+- [x] `pairing.py` — candidate fact pairs via subject+metric blocking
+- [x] `adjudicate.py` — the context-key rule + LLM for ambiguous pairs
+- [x] **TEST:** Case 2 (standalone vs consolidated) → RECONCILED, not CONTRADICTS
+- [x] **TEST:** Case 1 (Mn vs Cr) → CORROBORATES
+- [x] **TEST:** Case 3 (GDP vintage) → RECONCILED
+- [x] **TEST:** Case 4 (director) → temporal, both valid
 
 ### Phase 5 — Storage + API + UI
 - [ ] `db.py` — SQLite schema: documents, evidence, facts, relations

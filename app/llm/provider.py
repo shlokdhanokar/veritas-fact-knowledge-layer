@@ -34,17 +34,26 @@ T = TypeVar("T", bound=BaseModel)
 # which is not enough to ingest a single 100-page document. Free-tier quota,
 # not raw capability, is the binding constraint for a project graders must be
 # able to run themselves.
-# Quota is metered PER MODEL, so the chain doubles as a quota pool: when one
-# model's daily allowance is exhausted the next still has its own. Measured on a
-# free key: 20 requests/day each. Lite models are listed because they carry the
-# same grounding guarantees - a quote either verifies against the source or the
-# fact is dropped - so a weaker model degrades recall, never correctness.
+# Quota is metered PER PROJECT PER MODEL, so this chain doubles as a quota pool:
+# when one model's daily allowance is exhausted the next still has its own.
+#
+# Ordering is newest-first, because Google retires models for new projects: a
+# key created today cannot call gemini-2.5-flash at all ("no longer available to
+# new users"), while an older project still can. Listing both keeps one codebase
+# working across old and new keys.
+#
+# Lite models are included deliberately. They carry the same grounding
+# guarantee - a quote either verifies against the source text or the fact is
+# dropped - so falling back to a weaker model costs recall, never correctness.
 GEMINI_FALLBACKS = (
-    "gemini-2.5-flash",
-    "gemini-flash-latest",
+    "gemini-3.6-flash",
+    "gemini-3.7-flash",
+    "gemini-3.8-flash",
+    "gemini-3.5-flash",
+    "gemini-3.5-flash-lite",
     "gemini-flash-lite-latest",
     "gemini-3.1-flash-lite",
-    "gemini-3.6-flash",
+    "gemini-2.5-flash",
 )
 
 TRANSIENT_MARKERS = ("503", "UNAVAILABLE", "429", "RESOURCE_EXHAUSTED", "500", "INTERNAL")
