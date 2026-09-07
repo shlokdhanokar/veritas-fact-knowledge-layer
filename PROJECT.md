@@ -181,7 +181,8 @@ Agile: every step ends with a runnable test before moving on.
 ### Phase 6 — Ship
 - [x] Extraction cache (content-addressed; makes incremental ingest work)
 - [x] Incremental ingest (new doc compares only against candidates) — brownie point
-- [ ] README: Setup, Video Demo, Approach, Limitations & Next Steps, Additional Notes
+- [x] README: Setup, Video Demo, Approach, Limitations & Next Steps, Additional Notes
+- [x] Generalization test: unseen PDFs, alien domain, all four cases found
 - [ ] Record 3-minute demo video (scripted: 20s arch / 30s ingest / 90s four cases / 20s limits)
 - [ ] Final commit, push, submit form by 10:00 AM 09-09
 

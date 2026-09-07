@@ -209,6 +209,18 @@ class Store:
             )
             self._conn.commit()
 
+    def clear_relations(self):
+        """Drop every relation.
+
+        Needed before a full re-adjudication: relations are keyed by fact pair,
+        so an INSERT OR REPLACE leaves behind any pair the new rules no longer
+        consider interesting. Those stale rows then read as current verdicts,
+        which is how a fixed false positive can appear not to have been fixed.
+        """
+        with self._lock:
+            self._conn.execute("DELETE FROM relations")
+            self._conn.commit()
+
     def relations(
         self,
         *,

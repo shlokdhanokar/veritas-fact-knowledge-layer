@@ -11,6 +11,7 @@ from app.normalize.units import normalize_quantity
 from app.reasoning.adjudicate import (
     aggregation_signature,
     metric_delta,
+    identity_relation,
     adjudicate,
     compare_context,
     periods_equivalent,
@@ -301,3 +302,95 @@ def test_aggregation_signature_reads_component_labels():
     assert aggregation_signature("Cash equivalents (B)") == (False, "B")
     assert aggregation_signature("Cash & cash equivalents (A+B)") == (True, "AB")
     assert aggregation_signature("Revenue from operations") == (False, "")
+
+
+# --------------------------------------------------------------------------
+# Identity is three-way, not two-way
+#
+# Found by testing on documents the system had never seen. Collapsing the
+# middle case into either neighbour was measurably wrong in both directions.
+# --------------------------------------------------------------------------
+
+
+def test_identical_names_permit_a_confirmed_contradiction():
+    a = make_fact(metric="formal employment rate", raw="11", magnitude=None,
+                  unit="percent", context={"geography": "India"})
+    b = make_fact(metric="formal employment rate", raw="11.2", magnitude=None,
+                  unit="percent", context={"geography": "India"}, doc="b")
+    assert identity_relation(a, b)[0] == "same"
+    assert adjudicate(a, b).verdict == "CONTRADICTS"
+
+
+def test_one_name_containing_another_is_only_a_suspicion():
+    """A total and its component share every word of the shorter name.
+
+    Asserting CONTRADICTS here produced dozens of false positives on the real
+    corpus (EBITDA vs Service EBITDA, ESOPs ungranted vs Time-based ESOPs
+    ungranted). It must be flagged, never asserted.
+    """
+    total = make_fact(metric="ESOPs ungranted", raw="40424975", magnitude=None,
+                      unit=None, context={"period": "FY24"})
+    part = make_fact(metric="Time-based ESOPs ungranted", raw="25364975",
+                     magnitude=None, unit=None, context={"period": "FY24"}, doc="b")
+
+    kind, _ = identity_relation(total, part)
+    assert kind == "specialisation"
+    rel = adjudicate(total, part)
+    assert rel.verdict == "LIKELY_CONTRADICTS"
+    assert rel.unstated_keys == ["metric_identity"]
+    assert "component and its total" in rel.reasoning
+
+
+def test_specialisation_still_surfaces_a_real_disagreement():
+    """The recall side: this pair was silently dropped before the three-way split.
+
+    Two documents counting the same fleet, worded differently, disagreeing.
+    """
+    a = make_fact(subject="Northwind plc", metric="number of turbines", raw="84",
+                  magnitude=None, unit=None, context={"period": "as of December 31, 2024"})
+    b = make_fact(subject="Northwind plc", metric="turbines operated", raw="91",
+                  magnitude=None, unit=None,
+                  context={"period": "as of December 31, 2024"}, doc="b")
+
+    assert adjudicate(a, b).verdict == "LIKELY_CONTRADICTS"
+
+
+def test_negation_makes_names_different_not_nested():
+    """'current' and 'non-current' are opposites, not a general and a special case."""
+    cur = make_fact(metric="Current lease liabilities", raw="2,001",
+                    magnitude="million", context={"period": "FY24"})
+    non = make_fact(metric="Non-current lease liabilities", raw="8,436",
+                    magnitude="million", context={"period": "FY24"}, doc="b")
+
+    assert identity_relation(cur, non)[0] == "different"
+    assert adjudicate(cur, non).verdict == "UNRELATED"
+
+
+def test_two_sided_difference_is_different():
+    a = make_fact(subject="Interest at amortised cost to banks", metric="Finance costs",
+                  raw="130.38", magnitude="million", context={"period": "FY24"})
+    b = make_fact(subject="Interest at amortised cost to others", metric="Finance costs",
+                  raw="1.49", magnitude="million", context={"period": "FY24"}, doc="b")
+    assert identity_relation(a, b)[0] == "different"
+    assert adjudicate(a, b).verdict == "UNRELATED"
+
+
+def test_spelled_out_fiscal_years_unify():
+    """An unseen document wrote 'financial year 2024' where its sibling wrote FY2024."""
+    a = make_fact(metric="generation", raw="1,240", magnitude=None, unit="GWh",
+                  context={"period": "FY2024"})
+    b = make_fact(metric="generation", raw="1,240", magnitude=None, unit="GWh",
+                  context={"period": "financial year 2024"}, doc="b")
+    assert adjudicate(a, b).verdict == "CORROBORATES"
+
+
+def test_open_ended_tenures_are_temporal_not_contradictory():
+    """Both intervals open, on opposite sides: a beginning and an end of one tenure."""
+    holds = make_fact(subject="Elena Voss", metric="role", raw=None,
+                      value_text="Chief Operating Officer", valid_from="2019-06-01")
+    left = make_fact(subject="Elena Voss", metric="Chief Operating Officer role",
+                     raw=None, value_text="stepped down", valid_to="2025-03-01", doc="b")
+
+    rel = adjudicate(holds, left)
+    assert rel.verdict == "RECONCILED"
+    assert rel.differing_keys == ["valid_time"]

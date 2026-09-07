@@ -36,7 +36,7 @@ A 100-page filing takes a few minutes; the UI polls and reports progress.
 ```bash
 python scripts/ingest.py path/to/doc.pdf --limit 40 --out data/facts.json
 python scripts/relate.py data/facts.json --verdict CONTRADICTS
-python -m pytest -q                                   # 110 tests, no API key needed
+python -m pytest -q                                   # 117 tests, no API key needed
 ```
 
 `--limit` caps how many passages are read per document. Leave it off to read
@@ -96,9 +96,17 @@ relationships fall out of the answer:
 | match | agree | **CORROBORATES** |
 | match, all stated on both sides | disagree | **CONTRADICTS** |
 | match, but one side leaves a qualifier unstated | disagree | **LIKELY_CONTRADICTS** |
+| match, but one metric name contains the other | disagree | **LIKELY_CONTRADICTS** |
 | differ | either | **RECONCILED** — naming the key that explains the gap |
 
 One mechanism, four outcomes, no per-case special-casing.
+
+`CONTRADICTS` is deliberately hard to earn: it means every qualifier that could
+explain the gap is stated on both sides and agrees, *and* the two names match
+exactly modulo synonyms. Anything short of that is a flagged suspicion with the
+specific doubt named. Across six documents and 1,507 facts the system reports
+**5 confirmed contradictions and 90 suspicions** — a ratio it should be judged on,
+because a knowledge layer that cries wolf is worse than useless.
 
 ### Pipeline
 
@@ -162,7 +170,37 @@ Claude Code (Claude Opus 5) for implementation throughout. Google Gemini
 extraction at runtime. Every design decision, and every fix listed below, came
 from running the system on the real documents and reading the output.
 
-### Three bugs the real data found
+### Tested on documents the system had never seen
+
+The brief warns that submissions must not rely on hard-coded facts, filenames, or
+document-specific rules, and will be tested with other PDFs. So I tested that
+directly rather than assuming it.
+
+I wrote two short PDFs about a fictional wind-energy company — a domain with no
+overlap with Indian financial filings, in units (GWh) the code has never seen —
+and planted one instance of each required case. Then I wiped the database and
+uploaded them through the HTTP API, exactly as a reviewer would.
+
+All eleven facts grounded at 100%, and every planted case was found:
+
+| Planted | Found as |
+|---|---|
+| Same figure, two documents | **CORROBORATES** 42 GWh ↔ 42 GWh |
+| Same figure, `FY2024` vs `financial year 2024` | **CORROBORATES** 1,240 GWh ↔ 1,240 GWh |
+| Officer appointed, later stepped down | **RECONCILED** on `valid_time` |
+| Generation with and without a divested site | **RECONCILED** on `entity_scope` |
+| 84 vs 91 turbines, same date | **LIKELY_CONTRADICTS** |
+
+That run found three real bugs the starter documents never exposed, all now
+fixed and covered by tests: fiscal years spelled out in words were read as
+different periods; a bare noun unit ("turbines") could not meet an unidentified
+one, which silently suppressed the planted contradiction; and two tenures that
+were open-ended on opposite sides never triggered the temporal check.
+
+It also forced the sharpest design decision in the system — see the third bug
+below.
+
+### Bugs the real data found
 
 These are worth reporting because none were visible from the design, and each
 changed the system:
@@ -186,6 +224,23 @@ changed the system:
    digit-density scoring ranked those pages 58/89 and 83/100, below far less
    meaningful appendix tables. Assertive-claim sentences are now scored
    explicitly.
+
+4. **Metric identity is three-way, not two-way.** This one took two wrong
+   answers to get right. Treating any difference in wording as "different
+   metrics" gave high precision but silently dropped a real 84-vs-91
+   disagreement. Treating one name containing another as "same metric" surfaced
+   it — along with dozens of false contradictions between a total and its own
+   component (`EBITDA` vs `Service EBITDA`, `ESOPs ungranted` vs `Time-based
+   ESOPs ungranted`).
+
+   Neither collapse is correct, because the words genuinely do not say which
+   case you are in. So nesting became its own outcome: a *specialisation* is
+   flagged as `LIKELY_CONTRADICTS` with the differing words named, never
+   asserted. Negation is handled separately — `current` and `non-current` are
+   opposites rather than a general and a special case, so they are simply
+   different.
+
+   Confirmed contradictions went 46 → 5 while the planted case stayed found.
 
 ---
 
@@ -319,7 +374,7 @@ app/
   store.py     SQLite
   pipeline.py  ingest orchestration, shared by CLI and API
 scripts/       ingest, relate, load
-tests/         110 tests, none requiring an API key
+tests/         117 tests, none requiring an API key
 ```
 
 **Credentials** are read from `.env`, which is gitignored. No key is committed.

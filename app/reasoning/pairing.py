@@ -52,6 +52,25 @@ def blocking_keys(fact: Fact) -> set[str]:
     return tokenize(fact.metric) | tokenize(fact.subject)
 
 
+def overlap(a: set[str], b: set[str]) -> float:
+    """Containment: how much of the smaller phrase the larger one covers.
+
+    Jaccard punishes terseness. One document writing "role" where another writes
+    "Chief Operating Officer role" scores 0.25 by Jaccard and falls below any
+    sensible threshold, so the pair never reaches adjudication at all — which is
+    how a real temporal supersession went undetected during testing. Containment
+    scores that pair 1.0, which is the right reading: one side is simply briefer
+    about the same thing.
+
+    Being permissive here is safe. Pairing only decides what is worth *looking*
+    at; `identity_delta` in adjudication still refuses to call two genuinely
+    different metrics a contradiction.
+    """
+    if not a or not b:
+        return 0.0
+    return len(a & b) / min(len(a), len(b))
+
+
 def similarity(a: Fact, b: Fact) -> float:
     """How likely two facts describe the same thing.
 
@@ -59,25 +78,48 @@ def similarity(a: Fact, b: Fact) -> float:
     with a vague subject (common when a document omits the company name because
     it is talking about itself) still scores well.
     """
-    metric = jaccard(tokenize(a.metric), tokenize(b.metric))
-    subject = jaccard(tokenize(a.subject), tokenize(b.subject))
+    ma, mb = tokenize(a.metric), tokenize(b.metric)
+    sa, sb = tokenize(a.subject), tokenize(b.subject)
+
+    # Containment is discounted slightly so an exact match still ranks higher.
+    metric = max(jaccard(ma, mb), 0.9 * overlap(ma, mb))
     # An empty or generic subject should not veto an otherwise strong match.
-    if not tokenize(a.subject) or not tokenize(b.subject):
+    if not sa or not sb:
         return metric
+    subject = max(jaccard(sa, sb), 0.9 * overlap(sa, sb))
     return 0.7 * metric + 0.3 * subject
 
 
+# Units with a real dimension. Anything else is a bare noun the model echoed
+# from the text ("turbines", "parcels", "pin-codes") and is really just a count.
+DIMENSIONED = {"INR", "USD", "EUR", "GBP", "percent", "bps", "days", "years", "months"}
+
+
 def comparable_units(a: Fact, b: Fact) -> bool:
-    """Two quantities are only comparable if they resolve to the same unit.
+    """Two quantities are only comparable if they measure the same kind of thing.
 
     Rupees and percentages are never the same fact, however similar the wording.
+
+    But "count" is our marker for *no unit identified*, and the model often
+    echoes the counted noun instead ("84 turbines" -> unit "turbines", while the
+    sibling document's "91 turbines" yields unit "count"). Treating those as
+    incomparable silently suppressed a real contradiction during testing, so a
+    bare noun and an unidentified unit are allowed to meet.
     """
     qa, qb = a.quantity, b.quantity
     if qa is None or qb is None:
         return a.quantity is None and b.quantity is None  # both non-numeric
     if not (qa.is_normalized and qb.is_normalized):
         return False
-    return qa.canonical_unit == qb.canonical_unit
+
+    ua, ub = qa.canonical_unit, qb.canonical_unit
+    if ua == ub:
+        return True
+    # One side has a real dimension, the other does not: not comparable.
+    if ua in DIMENSIONED or ub in DIMENSIONED:
+        return False
+    # Both are countable nouns or unidentified — same dimension (dimensionless).
+    return True
 
 
 def candidate_pairs(

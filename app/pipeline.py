@@ -115,6 +115,8 @@ def relate_new_facts(new_facts: list[Fact], *, store: Store | None = None) -> di
 def rebuild_relations(store: Store | None = None) -> dict:
     """Re-adjudicate every pair. Used after a reasoning change, not during ingest."""
     store = store or get_store()
+    # Full rebuild means the old verdicts are no longer authoritative.
+    store.clear_relations()
     facts = store.all_facts()
     relations = []
     for a, b, score in candidate_pairs(facts):

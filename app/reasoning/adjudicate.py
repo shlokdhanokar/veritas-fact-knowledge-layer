@@ -96,8 +96,52 @@ def metric_delta(a: Fact, b: Fact) -> set[str]:
     residual = ta.symmetric_difference(tb)
     if not residual:
         return set()
-
     return _meaningful_residual(residual, ta, tb)
+
+
+# Words that change *what is being measured* rather than merely how it is
+# phrased. If one side carries one of these and the other does not, the two are
+# different quantities even though one phrase contains the other: "EBITDA margin"
+# and "Adjusted EBITDA margin" are not the same number.
+MEASURE_QUALIFIERS = frozenset({
+    "adjusted", "unadjusted", "underlying", "normalised", "normalized",
+    "restated", "proforma", "forma", "excluding", "including", "ex",
+    "net", "gross", "diluted", "basic", "organic", "comparable",
+    "nominal", "real", "constant", "current", "average", "median",
+    "annualised", "annualized", "estimated", "projected", "budgeted",
+    "standalone", "consolidated", "reported", "recurring", "continuing",
+    # Negation and contrast. These invert meaning outright, so a phrase that
+    # merely *contains* another is not a more specific version of it:
+    # "current lease liabilities" vs "NON-current lease liabilities" are
+    # opposites, and "profit considered in consolidation" vs "NOT considered"
+    # is its complement. Treating these as incidental produced the largest
+    # class of false contradictions when the guard was first loosened.
+    "non", "not", "un", "without", "less", "pre", "post", "deferred",
+    "comprehensive", "share", "other", "total", "sub",
+})
+
+
+def _subset_relation(ta: set[str], tb: set[str]) -> bool:
+    """Is one phrase simply a more specific version of the other?
+
+    The distinction that matters for identity:
+
+      "number of turbines" vs "turbines operated"  -> one adds a word: SAME thing
+      "interest ... to banks" vs "... to others"   -> each has a word the other
+                                                       lacks: DIFFERENT things
+
+    A subset means one document was more specific about the same quantity. A
+    two-sided difference means the documents are naming different quantities.
+    Testing on an unseen document showed the earlier rule - any residual at all
+    means different - was suppressing a genuine contradiction between two
+    phrasings of the same count.
+    """
+    if not ta or not tb or not (ta <= tb or tb <= ta):
+        return False
+    # The extra words decide. Incidental phrasing ("number of", "operated") still
+    # names the same quantity; a measure qualifier ("adjusted", "net") does not.
+    extra = ta.symmetric_difference(tb)
+    return not (extra & MEASURE_QUALIFIERS)
 
 
 def _meaningful_residual(residual: set[str], ta: set[str], tb: set[str]) -> set[str]:
@@ -134,6 +178,48 @@ def identity_delta(a: Fact, b: Fact) -> set[str]:
     """Everything that says these two facts are not about the same thing."""
     return metric_delta(a, b) | subject_delta(a, b)
 
+
+def identity_relation(a: Fact, b: Fact) -> tuple[str, set[str]]:
+    """Classify how two facts' names relate. Returns (kind, residual words).
+
+    Three outcomes, and the middle one is the point:
+
+    ``same``
+        The names agree modulo synonyms. A value disagreement here is a real
+        contradiction, because there is nothing left to explain it.
+
+    ``specialisation``
+        One name contains the other plus extra words ("EBITDA" inside "Service
+        EBITDA", "ESOPs ungranted" inside "Time-based ESOPs ungranted"). These
+        are *usually* different quantities — a segment, a component, a variant —
+        but sometimes just a terser phrasing of one thing ("number of turbines"
+        vs "turbines operated"). We cannot tell from the words alone.
+
+    ``different``
+        Each name carries something the other lacks ("... to banks" vs "... to
+        others"), or a qualifier inverts the meaning ("current" vs
+        "non-current"). Different quantities; no comparison is meaningful.
+
+    Collapsing ``specialisation`` into either neighbour was wrong in both
+    directions when measured. Calling it ``same`` produced dozens of confident
+    contradictions between a total and its own components. Calling it
+    ``different`` silently suppressed a genuine 84-vs-91 disagreement found
+    while testing on an unseen document. So it gets its own verdict: flagged for
+    a human, never asserted.
+    """
+    residual = identity_delta(a, b)
+    if not residual:
+        return "same", set()
+
+    ma, mb = tokenize(a.metric), tokenize(b.metric)
+    sa, sb = tokenize(a.subject), tokenize(b.subject)
+    metric_nested = bool(ma and mb and (ma <= mb or mb <= ma))
+    subject_nested = not sa or not sb or (sa <= sb or sb <= sa)
+
+    if metric_nested and subject_nested and not (residual & MEASURE_QUALIFIERS):
+        return "specialisation", residual
+    return "different", residual
+
 # Context keys whose disagreement fully explains a difference in value. These
 # are the qualifiers that change *what is being measured*, not merely how it is
 # described.
@@ -162,7 +248,18 @@ def _vintage_rank(value: str | None) -> int | None:
     return None
 
 
-_FY = re.compile(r"\bfy\s?(\d{2,4})(?:\s*[-/]\s*(\d{2,4}))?\b", re.I)
+# Fiscal years as documents actually spell them. Beyond "FY24" and "FY2023-24"
+# this covers "financial year 2024", "fiscal year 2024" and "year ended March 31,
+# 2024". Found by testing on an unseen document that wrote "financial year 2024"
+# where its sibling wrote "FY2024": without this the same period reads as two
+# different ones, and a perfect corroboration is downgraded to a meaningless
+# reconciliation that admits in its own reasoning that the values coincide.
+_FY = re.compile(
+    r"\b(?:fy|financial\s+year|fiscal\s+year|fiscal|year\s+end(?:ed|ing))\s*"
+    r"(?:[a-z]+\s+\d{1,2},?\s*)?"  # optional "March 31," in "year ended March 31, 2024"
+    r"(\d{2,4})(?:\s*[-/]\s*(\d{2,4}))?\b",
+    re.I,
+)
 _QUARTER = re.compile(r"\bq([1-4])\b", re.I)
 _YEAR_RANGE = re.compile(r"\b(20\d{2})\s*[-/]\s*(\d{2,4})\b")
 _AS_OF = re.compile(r"\b(?:as\s+(?:of|at|on))\b", re.I)
@@ -273,11 +370,29 @@ def compare_context(a: Fact, b: Fact) -> list[str]:
 
 
 def _temporal_conflict(a: Fact, b: Fact) -> bool:
-    """Do these facts describe non-overlapping validity intervals?"""
-    return bool(
-        (a.valid_to and b.valid_from and a.valid_to <= b.valid_from)
-        or (b.valid_to and a.valid_from and b.valid_to <= a.valid_from)
-    )
+    """Do these facts describe different points on the same timeline?
+
+    Two shapes count, and the second was missed until an unseen document
+    exposed it:
+
+    1. Non-overlapping intervals — one state ends before the other begins.
+
+    2. Different endpoints for the same subject. A prospectus says a person
+       holds an office "since June 2019" (open-ended); a later filing says they
+       stepped down "with effect from March 1, 2025" (open on the other side).
+       Neither interval is closed, so no ordering test fires, yet these are
+       plainly a beginning and an end of one tenure rather than a disagreement.
+
+    Only the endpoints are compared, so two facts asserting the identical
+    interval are left alone for the value comparison to judge.
+    """
+    if (a.valid_to and b.valid_from and a.valid_to <= b.valid_from) or (
+        b.valid_to and a.valid_from and b.valid_to <= a.valid_from
+    ):
+        return True
+
+    both_dated = (a.valid_from or a.valid_to) and (b.valid_from or b.valid_to)
+    return bool(both_dated and (a.valid_from, a.valid_to) != (b.valid_from, b.valid_to))
 
 
 def _explain(key: str, a: Fact, b: Fact) -> str:
@@ -371,31 +486,51 @@ def adjudicate(a: Fact, b: Fact, similarity: float = 1.0) -> Relation:
     # the system's most common and most embarrassing error: on real extracted
     # facts this single check removed the large majority of false contradictions
     # (component-vs-total, operating-vs-investing, gross-vs-adjusted).
-    delta = identity_delta(a, b)
-    if delta:
-        words = ", ".join(sorted(delta))
+    kind, residual = identity_relation(a, b)
+    if kind != "same":
+        words = ", ".join(sorted(residual))
         if have_values and agree:
             return Relation(
                 left_id=a.fact_id, right_id=b.fact_id,
                 verdict="CORROBORATES", differing_keys=[],
                 reasoning=(
                     f"Different wording ({a.subject!r}/{a.metric!r} vs "
-                    f"{b.subject!r}/{b.metric!r}, differing on: {words}) "
-                    f"but the values resolve to the same figure "
-                    f"{qa.canonical_value:,.6g} {qa.canonical_unit} "
-                    f"(difference {gap:.3%}). Agreement across independent phrasings is "
-                    f"stronger evidence than agreement in identical wording."
+                    f"{b.subject!r}/{b.metric!r}, differing on: {words}) but the values "
+                    f"resolve to the same figure {qa.canonical_value:,.6g} "
+                    f"{qa.canonical_unit} (difference {gap:.3%}). Agreement across "
+                    f"independent phrasings is stronger evidence than agreement in "
+                    f"identical wording."
                 ),
                 method="arithmetic", confidence=round(base_conf * 0.9, 3),
             )
+
+        if kind == "specialisation" and have_values:
+            # One name contains the other. Possibly a segment or component of the
+            # other, possibly just terser wording for the same thing. Flag it;
+            # never assert it.
+            return Relation(
+                left_id=a.fact_id, right_id=b.fact_id,
+                verdict="LIKELY_CONTRADICTS", differing_keys=[],
+                unstated_keys=["metric_identity"],
+                reasoning=(
+                    f"The values differ: {qa.canonical_value:,.6g} vs "
+                    f"{qb.canonical_value:,.6g} {qa.canonical_unit} (a {gap:.1%} gap), "
+                    f"and every qualifier stated on both sides agrees. But one name "
+                    f"contains the other ({a.metric!r} vs {b.metric!r}, differing on: "
+                    f"{words}), so these may be a component and its total, or a segment "
+                    f"and the whole, rather than two readings of one quantity. Confirm "
+                    f"they measure the same thing before treating this as an error."
+                ),
+                method="arithmetic", confidence=round(base_conf * 0.45, 3),
+            )
+
         return Relation(
             left_id=a.fact_id, right_id=b.fact_id,
             verdict="UNRELATED", differing_keys=["metric"],
             reasoning=(
                 f"These describe different things ({a.subject!r}/{a.metric!r} vs "
-                f"{b.subject!r}/{b.metric!r}), "
-                f"differing on: {words}. Different quantities may hold different "
-                f"values, so no contradiction is claimed."
+                f"{b.subject!r}/{b.metric!r}), differing on: {words}. Different "
+                f"quantities may hold different values, so no contradiction is claimed."
             ),
             method="rule", confidence=round(base_conf * 0.5, 3),
         )
