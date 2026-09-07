@@ -135,14 +135,14 @@ Agile: every step ends with a runnable test before moving on.
 - [x] Read assignment, mine all 6 PDFs, verify the four required cases exist
 - [x] Choose stack (Python + FastAPI + SQLite) and free LLM provider (Gemini)
 - [x] Write this plan
-- [ ] Repo scaffold, `.gitignore`, `requirements.txt`, `.env.example`
-- [ ] `git init` + first commit
+- [x] Repo scaffold, `.gitignore`, `requirements.txt`, `.env.example`
+- [x] `git init` + first commit
 
 ### Phase 1 — Grounding layer (no LLM yet)
-- [ ] `pdf_parser.py` — extract text per page with char offsets and bboxes
+- [x] `pdf_parser.py` — extract text per page with char offsets and bboxes
 - [ ] `segmenter.py` — split into evidence units (paragraph / table row)
-- [ ] **TEST:** given a quote, resolve it back to page + bbox in the source PDF
-- [ ] **TEST:** all 6 starter PDFs parse without error, report unit counts
+- [x] **TEST:** given a quote, resolve it back to page + bbox in the source PDF
+- [x] **TEST:** all 6 starter PDFs parse without error, report unit counts
 
 ### Phase 2 — Extraction
 - [ ] `llm/provider.py` — provider abstraction (Gemini / Groq / Anthropic)
