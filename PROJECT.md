@@ -121,7 +121,7 @@ PDF
 ### LLM provider
 | Provider | Model | Cost | Role |
 |---|---|---|---|
-| Google Gemini (AI Studio) | `gemini-2.0-flash` | **free** | default |
+| Google Gemini (AI Studio) | `gemini-3.6-flash` | **free** | default |
 | Groq | `llama-3.3-70b-versatile` | free | fallback |
 | Anthropic | `claude-opus-5` | paid | optional, highest quality |
 
@@ -145,17 +145,18 @@ Agile: every step ends with a runnable test before moving on.
 - [x] **TEST:** all 6 starter PDFs parse without error, report unit counts
 
 ### Phase 2 — Extraction
-- [ ] `llm/provider.py` — provider abstraction (Gemini / Groq / Anthropic)
-- [ ] `schema.py` — typed Fact model with context keys
+- [x] `llm/provider.py` — provider abstraction (Gemini / Groq / Anthropic)
+- [x] `schema.py` — typed Fact model with context keys
 - [ ] `extractor.py` — evidence unit → list of Facts, structured output
 - [ ] **TEST:** run on Q4 deck (27pp, cheapest); inspect claim quality by hand
 - [ ] **TEST:** every extracted fact's quote is verbatim-present in its evidence unit
 
 ### Phase 3 — Normalization
-- [ ] `normalize/units.py` — crore/lakh/million/billion, ₹/$/%
+- [x] `normalize/units.py` — crore/lakh/million/billion, ₹/$/%
 - [ ] `normalize/periods.py` — FY24, FY2024/25, Q4 FY24, "as of Dec 31 2021"
 - [ ] `normalize/entities.py` — alias resolution
-- [ ] **TEST:** unit table — 8,142 Cr == 81,420 Mn; FY24 == FY2023-24
+- [x] **TEST:** unit table — 8,142 Cr == 81,420 Mn (23 tests)
+- [ ] **TEST:** period table — FY24 == FY2023-24, Q4 FY24 nested in FY24
 
 ### Phase 4 — Reasoning engine
 - [ ] `pairing.py` — candidate fact pairs via subject+metric blocking
