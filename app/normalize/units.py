@@ -107,20 +107,87 @@ def canonical_magnitude(token: str | None) -> tuple[str | None, float]:
     return None, 1.0
 
 
+# Currency detected anywhere inside a free-text unit phrase.
+_CURRENCY_PATTERNS: tuple[tuple[re.Pattern, str], ...] = (
+    (re.compile(r"₹|\brs\b|\brs\.|\binr\b|\brupee", re.I), "INR"),
+    (re.compile(r"\$|\busd\b|\bus\s*dollar|\bdollar", re.I), "USD"),
+    (re.compile(r"€|\beur\b|\beuro", re.I), "EUR"),
+    (re.compile(r"£|\bgbp\b|\bpound", re.I), "GBP"),
+)
+
+_PERCENT_PATTERN = re.compile(r"%|\bper\s?cent\b|\bpercent\b|\bpct\b", re.I)
+_BPS_PATTERN = re.compile(r"\bbps\b|\bbasis\s+points?\b", re.I)
+_MAGNITUDE_PATTERN = re.compile(
+    r"\b(thousand|lakhs?|lacs?|crores?|cr|million|mn|billion|bn|trillion|tn)\b", re.I
+)
+
+
+def parse_unit_phrase(token: str | None) -> tuple[str | None, str | None]:
+    """Split a free-text unit into (canonical unit, embedded magnitude).
+
+    Models do not reliably keep magnitude out of the unit field. Real values we
+    saw include "Indian Rupees in million", "₹ Cr", and a bare "million" with no
+    magnitude set at all. Left unparsed these fragment one currency across five
+    incomparable spellings, so facts that should corroborate never even get
+    compared — a silent, recall-destroying failure.
+
+    Parsing the phrase rather than looking it up in a table fixes all of those
+    shapes at once and generalises to phrasings we have not seen.
+    """
+    if not token:
+        return None, None
+    text = str(token).strip()
+    if not text:
+        return None, None
+
+    magnitude_match = _MAGNITUDE_PATTERN.search(text)
+    magnitude = magnitude_match.group(1).lower() if magnitude_match else None
+
+    if _BPS_PATTERN.search(text):
+        return "bps", magnitude
+    if _PERCENT_PATTERN.search(text):
+        return "percent", magnitude
+
+    for pattern, code in _CURRENCY_PATTERNS:
+        if pattern.search(text):
+            return code, magnitude
+
+    # The whole phrase was a magnitude ("million"), so there is no unit left.
+    residual = _MAGNITUDE_PATTERN.sub("", text).strip(" .,-–—/()")
+    if not residual:
+        return None, magnitude
+
+    # Single stray letters are model noise, not units; treat as unknown so the
+    # caller can fall back to inferring the unit from the evidence quote.
+    if len(residual) < 2:
+        return None, magnitude
+
+    return residual.lower(), magnitude
+
+
+def infer_unit_from_text(text: str | None) -> str | None:
+    """Read the unit off the source text itself.
+
+    Used when the model's unit field is unusable. The quote is authoritative in
+    a way the model's summary is not, so this is grounded inference rather than
+    a guess — and it is the same evidence a human would look at.
+    """
+    if not text:
+        return None
+    if _BPS_PATTERN.search(text):
+        return "bps"
+    for pattern, code in _CURRENCY_PATTERNS:
+        if pattern.search(text):
+            return code
+    if _PERCENT_PATTERN.search(text):
+        return "percent"
+    return None
+
+
 def canonical_unit(token: str | None) -> str | None:
     """Map a unit token to a canonical unit name."""
-    if not token:
-        return None
-    key = token.strip().lower()
-    if key in CURRENCIES:
-        return CURRENCIES[key]
-    if key in {"percent", "per cent", "%", "pct"}:
-        return "percent"
-    if key == "bps":
-        return "bps"
-    if key in {"inr", "usd", "eur"}:
-        return key.upper()
-    return key or None
+    unit, _ = parse_unit_phrase(token)
+    return unit
 
 
 def normalize_quantity(
@@ -140,8 +207,10 @@ def normalize_quantity(
     if value is None:
         return None, None
 
-    _, multiplier = canonical_magnitude(magnitude)
-    unit_c = canonical_unit(unit)
+    unit_c, embedded_magnitude = parse_unit_phrase(unit)
+    # An explicit magnitude wins; otherwise use one found inside the unit phrase
+    # ("Indian Rupees in million" carries its own scale).
+    _, multiplier = canonical_magnitude(magnitude or embedded_magnitude)
 
     if unit_c == "bps":
         return value / 100.0, "percent"

@@ -1700,7 +1700,7 @@
       "magnitude": "million",
       "unit": "sq ft.",
       "canonical_value": 18820000.0,
-      "canonical_unit": "sq ft."
+      "canonical_unit": "sq ft"
     },
     "value_text": null,
     "context": {
@@ -4903,8 +4903,8 @@
       "value": 76.0,
       "magnitude": null,
       "unit": "₹ Cr",
-      "canonical_value": 76.0,
-      "canonical_unit": "₹ cr"
+      "canonical_value": 760000000.0,
+      "canonical_unit": "INR"
     },
     "value_text": null,
     "context": {
@@ -5046,8 +5046,8 @@
       "value": -404.0,
       "magnitude": null,
       "unit": "₹ Cr",
-      "canonical_value": -404.0,
-      "canonical_unit": "₹ cr"
+      "canonical_value": -4040000000.0,
+      "canonical_unit": "INR"
     },
     "value_text": null,
     "context": {
@@ -7967,7 +7967,7 @@
       "magnitude": null,
       "unit": "x",
       "canonical_value": 0.02,
-      "canonical_unit": "x"
+      "canonical_unit": "count"
     },
     "value_text": null,
     "context": {
@@ -8014,7 +8014,7 @@
       "magnitude": null,
       "unit": "x",
       "canonical_value": 0.01,
-      "canonical_unit": "x"
+      "canonical_unit": "count"
     },
     "value_text": null,
     "context": {

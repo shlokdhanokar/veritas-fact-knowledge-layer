@@ -168,11 +168,11 @@ def test_genuine_contradiction_is_reported():
 
     rel = adjudicate(a, b)
     assert rel.verdict == "CONTRADICTS"
-    assert "No qualifier" in rel.reasoning
+    assert "Nothing in either document accounts for it" in rel.reasoning
 
 
 def test_absent_context_key_is_not_treated_as_a_difference():
-    """The most important asymmetry in the system.
+    """Silence must not count as disagreement.
 
     If a missing qualifier counted as "different", every contradiction could be
     explained away by one document simply being less explicit.
@@ -181,7 +181,35 @@ def test_absent_context_key_is_not_treated_as_a_difference():
     silent = make_fact(raw="90,000.00", context={"period": "FY24"}, doc="b")
 
     assert compare_context(stated, silent) == []
-    assert adjudicate(stated, silent).verdict == "CONTRADICTS"
+
+
+def test_absent_context_key_is_not_treated_as_agreement_either():
+    """...but silence must not count as confirmation of a contradiction.
+
+    The assignment asks for "a genuine or likely contradiction" and "sensible
+    handling of ambiguity". An unstated qualifier is exactly that ambiguity, so
+    the verdict is downgraded and the missing key is named as the thing to check.
+    """
+    stated = make_fact(raw="81,415.38", context={"period": "FY24", "basis": "consolidated"})
+    silent = make_fact(raw="90,000.00", context={"period": "FY24"}, doc="b")
+
+    rel = adjudicate(stated, silent)
+    assert rel.verdict == "LIKELY_CONTRADICTS"
+    assert rel.unstated_keys == ["basis"]
+    assert "does not state" in rel.reasoning
+    assert rel.confidence < 1.0
+
+
+def test_genuine_contradiction_requires_both_sides_to_state_their_qualifiers():
+    """A confirmed contradiction: nothing is left unsaid that could explain it."""
+    a = make_fact(raw="81,415.38", context={"period": "FY24", "basis": "consolidated"}, doc="a")
+    b = make_fact(raw="90,000.00", context={"period": "FY24", "basis": "consolidated"}, doc="b")
+
+    rel = adjudicate(a, b)
+    assert rel.verdict == "CONTRADICTS"
+    assert rel.unstated_keys == []
+    assert rel.confidence > adjudicate(a, make_fact(
+        raw="90,000.00", context={"period": "FY24"}, doc="c")).confidence
 
 
 # --------------------------------------------------------------------------

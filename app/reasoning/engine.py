@@ -14,7 +14,7 @@ from app.reasoning.pairing import candidate_pairs
 from app.schema import Fact, Relation
 
 # Verdicts worth surfacing. UNRELATED pairs are the majority and carry no signal.
-INTERESTING = ("CONTRADICTS", "RECONCILED", "CORROBORATES")
+INTERESTING = ("CONTRADICTS", "LIKELY_CONTRADICTS", "RECONCILED", "CORROBORATES")
 
 
 def relate(
@@ -41,7 +41,7 @@ def relate(
 
     # Contradictions first: they are what a reader most needs to see, and they
     # are the claim the system is most accountable for.
-    order = {"CONTRADICTS": 0, "RECONCILED": 1, "CORROBORATES": 2}
+    order = {"CONTRADICTS": 0, "LIKELY_CONTRADICTS": 1, "RECONCILED": 2, "CORROBORATES": 3}
     relations.sort(key=lambda r: (order[r.verdict], -r.confidence))
     return relations
 

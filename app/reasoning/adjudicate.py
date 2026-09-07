@@ -97,6 +97,10 @@ def metric_delta(a: Fact, b: Fact) -> set[str]:
     if not residual:
         return set()
 
+    return _meaningful_residual(residual, ta, tb)
+
+
+def _meaningful_residual(residual: set[str], ta: set[str], tb: set[str]) -> set[str]:
     meaningful = set()
     for token in residual:
         group = _synonym_class(token)
@@ -106,6 +110,29 @@ def metric_delta(a: Fact, b: Fact) -> set[str]:
             continue
         meaningful.add(token)
     return meaningful
+
+
+def subject_delta(a: Fact, b: Fact) -> set[str]:
+    """Words that distinguish two subjects.
+
+    The same trap as metric names, one field over. A finance-costs table breaks
+    out "Interest at amortised cost to banks" and "...to others"; the metric is
+    identical and only the subject separates them, so comparing their values
+    produces a confident and completely spurious contradiction.
+
+    Subjects that reduce to nothing (a document saying "the Company" about
+    itself) are not used as a discriminator — absence of a name is not evidence
+    of a different entity.
+    """
+    ta, tb = tokenize(a.subject), tokenize(b.subject)
+    if not ta or not tb:
+        return set()
+    return _meaningful_residual(ta.symmetric_difference(tb), ta, tb)
+
+
+def identity_delta(a: Fact, b: Fact) -> set[str]:
+    """Everything that says these two facts are not about the same thing."""
+    return metric_delta(a, b) | subject_delta(a, b)
 
 # Context keys whose disagreement fully explains a difference in value. These
 # are the qualifiers that change *what is being measured*, not merely how it is
@@ -197,6 +224,31 @@ def periods_equivalent(a: str | None, b: str | None) -> bool:
     if fa is not None and fb is not None:
         return fa == fb
     return False
+
+
+def asymmetric_context(a: Fact, b: Fact) -> list[str]:
+    """Explanatory keys that one fact states and the other leaves silent.
+
+    This is the uncertainty the system must not paper over in either direction.
+
+    Treating silence as *agreement* would let us declare a hard contradiction
+    between a figure explicitly labelled "standalone" and one whose basis the
+    document never stated — even though the unlabelled figure may well be
+    standalone too, or consolidated, and we simply cannot tell.
+
+    Treating silence as *difference* would be worse: every genuine contradiction
+    could then be waved away because one side happened to be less explicit, and
+    the system could never report a disagreement at all.
+
+    So silence is neither. It is recorded as a named hypothesis, downgrades the
+    verdict from CONTRADICTS to LIKELY_CONTRADICTS, and is surfaced to the
+    reader as the specific thing to go and check.
+    """
+    return [
+        key
+        for key in EXPLANATORY_KEYS
+        if bool(a.context.get(key)) != bool(b.context.get(key))
+    ]
 
 
 def compare_context(a: Fact, b: Fact) -> list[str]:
@@ -319,7 +371,7 @@ def adjudicate(a: Fact, b: Fact, similarity: float = 1.0) -> Relation:
     # the system's most common and most embarrassing error: on real extracted
     # facts this single check removed the large majority of false contradictions
     # (component-vs-total, operating-vs-investing, gross-vs-adjusted).
-    delta = metric_delta(a, b)
+    delta = identity_delta(a, b)
     if delta:
         words = ", ".join(sorted(delta))
         if have_values and agree:
@@ -327,7 +379,8 @@ def adjudicate(a: Fact, b: Fact, similarity: float = 1.0) -> Relation:
                 left_id=a.fact_id, right_id=b.fact_id,
                 verdict="CORROBORATES", differing_keys=[],
                 reasoning=(
-                    f"Different wording ({a.metric!r} vs {b.metric!r}, differing on: {words}) "
+                    f"Different wording ({a.subject!r}/{a.metric!r} vs "
+                    f"{b.subject!r}/{b.metric!r}, differing on: {words}) "
                     f"but the values resolve to the same figure "
                     f"{qa.canonical_value:,.6g} {qa.canonical_unit} "
                     f"(difference {gap:.3%}). Agreement across independent phrasings is "
@@ -339,7 +392,8 @@ def adjudicate(a: Fact, b: Fact, similarity: float = 1.0) -> Relation:
             left_id=a.fact_id, right_id=b.fact_id,
             verdict="UNRELATED", differing_keys=["metric"],
             reasoning=(
-                f"These name different metrics ({a.metric!r} vs {b.metric!r}), "
+                f"These describe different things ({a.subject!r}/{a.metric!r} vs "
+                f"{b.subject!r}/{b.metric!r}), "
                 f"differing on: {words}. Different quantities may hold different "
                 f"values, so no contradiction is claimed."
             ),
@@ -369,14 +423,44 @@ def adjudicate(a: Fact, b: Fact, similarity: float = 1.0) -> Relation:
             method="arithmetic", confidence=round(base_conf, 3),
         )
 
+    # Values disagree. Before calling it a contradiction, ask whether one side
+    # left a relevant qualifier unstated — in which case the gap may be explained
+    # by something the document did not say, and we must not overclaim.
+    unstated = asymmetric_context(a, b)
+    if unstated:
+        hypotheses = []
+        for key in unstated:
+            stated_side, silent_side = (a, b) if a.context.get(key) else (b, a)
+            hypotheses.append(
+                f"{silent_side.evidence.filename} (p{silent_side.evidence.page}) does not state "
+                f"{key!r}, while the other reports {key}="
+                f"{stated_side.context.get(key)!r}"
+            )
+        return Relation(
+            left_id=a.fact_id, right_id=b.fact_id,
+            verdict="LIKELY_CONTRADICTS", differing_keys=[], unstated_keys=unstated,
+            reasoning=(
+                f"The values differ: {qa.canonical_value:,.6g} vs "
+                f"{qb.canonical_value:,.6g} {qa.canonical_unit} (a {gap:.1%} gap), and every "
+                f"qualifier stated on both sides agrees. But this is not confirmed as a "
+                f"genuine contradiction, because "
+                + "; ".join(hypotheses)
+                + f". If the unstated {'qualifiers differ' if len(unstated) > 1 else 'qualifier differs'}, "
+                f"the gap would be explained. Check this before treating it as an error."
+            ),
+            method="arithmetic",
+            # Each unresolved hypothesis makes the claim weaker.
+            confidence=round(base_conf * (0.6 ** len(unstated)), 3),
+        )
+
     return Relation(
         left_id=a.fact_id, right_id=b.fact_id,
         verdict="CONTRADICTS", differing_keys=[],
         reasoning=(
-            f"Every stated context key agrees, yet the values differ: "
-            f"{qa.canonical_value:,.6g} vs {qb.canonical_value:,.6g} "
-            f"{qa.canonical_unit} (a {gap:.1%} gap). No qualifier in either "
-            f"document accounts for the difference."
+            f"Every context key that could explain a difference is stated on both sides "
+            f"and agrees, yet the values differ: {qa.canonical_value:,.6g} vs "
+            f"{qb.canonical_value:,.6g} {qa.canonical_unit} (a {gap:.1%} gap). "
+            f"Nothing in either document accounts for it."
         ),
         method="arithmetic", confidence=round(base_conf, 3),
     )

@@ -19,7 +19,7 @@ from pydantic import BaseModel, Field
 from app.extraction.prompts import SYSTEM, build_user_prompt
 from app.extraction.cache import ExtractionCache, get_cache
 from app.llm.provider import LLMProvider, get_provider
-from app.normalize.units import normalize_quantity, parse_number
+from app.normalize.units import infer_unit_from_text, normalize_quantity, parse_number
 from app.parsing.pdf_parser import ParsedDoc
 from app.parsing.segmenter import Window
 from app.schema import Evidence, Fact, Quantity
@@ -153,14 +153,26 @@ def _to_fact(raw: RawFact, doc: ParsedDoc, window: Window) -> Fact | None:
     quantity = None
     if raw.value_raw is not None and str(raw.value_raw).strip():
         value = parse_number(raw.value_raw)
+        unit = raw.unit
         canonical_value, canonical_unit = normalize_quantity(
-            raw.value_raw, value, raw.magnitude, raw.unit
+            raw.value_raw, value, raw.magnitude, unit
         )
+        # The model sometimes returns an unusable unit ("I" for INR, or the
+        # magnitude alone). The source text is authoritative, so read the unit
+        # off the quote rather than dropping the fact into an incomparable
+        # bucket where it would silently never match anything.
+        if canonical_unit is None or canonical_unit == "count":
+            inferred = infer_unit_from_text(page.text[start:end])
+            if inferred:
+                unit = inferred
+                canonical_value, canonical_unit = normalize_quantity(
+                    raw.value_raw, value, raw.magnitude, inferred
+                )
         quantity = Quantity(
             raw=str(raw.value_raw).strip(),
             value=value,
             magnitude=raw.magnitude,
-            unit=raw.unit,
+            unit=unit,
             canonical_value=canonical_value,
             canonical_unit=canonical_unit,
         )

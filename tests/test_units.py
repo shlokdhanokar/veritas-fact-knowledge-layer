@@ -94,3 +94,75 @@ def test_tolerance_does_not_swallow_real_disagreement():
     a, _ = normalize_quantity("6.0", None, None, "percent")
     b, _ = normalize_quantity("7.8", None, None, "percent")
     assert not values_agree(a, b)
+
+
+# --------------------------------------------------------------------------
+# Unit phrases as they actually arrive from a model
+# --------------------------------------------------------------------------
+
+from app.normalize.units import infer_unit_from_text, parse_unit_phrase  # noqa: E402
+
+
+@pytest.mark.parametrize(
+    "phrase,unit,magnitude",
+    [
+        ("INR", "INR", None),
+        ("Indian Rupees in million", "INR", "million"),   # magnitude hidden in the unit
+        ("₹ Cr", "INR", "cr"),
+        ("Rs.", "INR", None),
+        ("million", None, "million"),                      # a magnitude, not a unit
+        ("crore", None, "crore"),
+        ("US$ million", "USD", "million"),
+        ("per cent", "percent", None),
+        ("%", "percent", None),
+        ("bps", "bps", None),
+        ("I", None, None),                                 # model noise, not a unit
+        ("days", "days", None),
+        ("", None, None),
+        (None, None, None),
+    ],
+)
+def test_parse_unit_phrase(phrase, unit, magnitude):
+    assert parse_unit_phrase(phrase) == (unit, magnitude)
+
+
+def test_embedded_magnitude_is_applied():
+    """'Indian Rupees in million' must scale even with no magnitude field."""
+    value, unit = normalize_quantity("81,415.38", None, None, "Indian Rupees in million")
+    assert value == pytest.approx(8.141538e10)
+    assert unit == "INR"
+
+
+def test_currency_spellings_unify():
+    """The bug this fixes: one currency fragmented across five spellings.
+
+    Each of these must land on the same canonical value, or facts that should
+    corroborate never get compared at all.
+    """
+    variants = [
+        ("8,142", "crore", "INR"),
+        ("8,142", "crore", "₹"),
+        ("8,142", "crore", "Rs."),
+        ("8,142", None, "₹ Cr"),
+        ("81,415.38", None, "Indian Rupees in million"),
+    ]
+    results = {normalize_quantity(r, None, m, u) for r, m, u in variants}
+    units = {u for _, u in results}
+    assert units == {"INR"}
+    values = sorted(v for v, _ in results)
+    assert values_agree(values[0], values[-1])
+
+
+@pytest.mark.parametrize(
+    "text,expected",
+    [
+        ("Revenue stood at ₹8,142 Cr for FY24", "INR"),
+        ("Rs. 127 Cr of EBITDA", "INR"),
+        ("growth of 6.5 per cent", "percent"),
+        ("a spread of 50 bps", "bps"),
+        ("US$ 500 million raised", "USD"),
+        ("122 gateways across India", None),
+    ],
+)
+def test_infer_unit_from_evidence_text(text, expected):
+    assert infer_unit_from_text(text) == expected

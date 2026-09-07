@@ -128,7 +128,19 @@ class Fact(BaseModel):
         return f"{self.subject} · {self.metric} = {val}" + (f"  [{ctx}]" if ctx else "")
 
 
-Verdict = Literal["CORROBORATES", "CONTRADICTS", "RECONCILED", "UNRELATED"]
+# CONTRADICTS vs LIKELY_CONTRADICTS is a deliberate distinction, not a hedge.
+# The first means: every qualifier that could explain the gap is stated on both
+# sides and they agree, so the disagreement is real. The second means: one side
+# left a relevant qualifier unstated, so the gap *might* be explained by
+# something the document simply did not say. Collapsing the two would force a
+# choice between crying wolf and never being able to disagree at all.
+Verdict = Literal[
+    "CORROBORATES",
+    "CONTRADICTS",
+    "LIKELY_CONTRADICTS",
+    "RECONCILED",
+    "UNRELATED",
+]
 
 
 class Relation(BaseModel):
@@ -139,6 +151,9 @@ class Relation(BaseModel):
     verdict: Verdict
     # For RECONCILED: which context key differs and therefore explains the gap.
     differing_keys: list[str] = Field(default_factory=list)
+    # For LIKELY_CONTRADICTS: qualifiers one side states and the other omits.
+    # These are the hypotheses a human should check before trusting the verdict.
+    unstated_keys: list[str] = Field(default_factory=list)
     reasoning: str = ""
     # How the verdict was reached, so a reader can tell rules from model judgement.
     method: Literal["rule", "llm", "arithmetic"] = "rule"

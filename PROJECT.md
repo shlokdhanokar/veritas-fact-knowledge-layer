@@ -42,8 +42,14 @@ The comparison engine then follows **one rule**, and that rule generates all thr
 | Context keys | Values | Verdict |
 |---|---|---|
 | match | agree | **CORROBORATES** |
-| match | disagree | **CONTRADICTS** |
+| match, all stated on both sides | disagree | **CONTRADICTS** |
+| match, but one side leaves a qualifier unstated | disagree | **LIKELY_CONTRADICTS** — name the unstated key as the thing to check |
 | differ | either | **RECONCILED** — and we name the key that differs |
+
+The `LIKELY_CONTRADICTS` row is the assignment's "genuine **or likely** contradiction"
+and its "sensible handling of ambiguity". Silence in a document is neither agreement
+nor disagreement: treating it as agreement cries wolf, treating it as difference makes
+the system incapable of ever disagreeing. So it is recorded as a named hypothesis.
 
 One mechanism, three outcomes. This is the thesis of the submission.
 
