@@ -1,0 +1,17 @@
+# Core
+fastapi>=0.115
+uvicorn[standard]>=0.32
+pydantic>=2.9
+python-multipart>=0.0.12
+python-dotenv>=1.0
+
+# PDF parsing (layout-aware: text + char offsets + bboxes)
+PyMuPDF>=1.24
+
+# LLM providers (install only what you use; Gemini is the free default)
+google-genai>=0.3
+# groq>=0.13
+# anthropic>=0.40
+
+# Testing
+pytest>=8.3

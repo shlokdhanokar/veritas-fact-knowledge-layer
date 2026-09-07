@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+*.db
+*.sqlite3
+data/dump.txt
+data/uploads/
+starter-datasets.zip
+.pytest_cache/
+.DS_Store
