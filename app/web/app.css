@@ -248,6 +248,41 @@ body::before {
   user-select: none;
 }
 
+/* Which qualifier explains the judgement. With thousands of reconciliations,
+   "show me the ones about accounting basis" is the question a reader has, and
+   scrolling is not an answer. */
+.keychips {
+  display: flex;
+  gap: calc(var(--sp) * 2);
+  flex-wrap: wrap;
+  margin: calc(var(--sp) * -3) 0 calc(var(--sp) * 6);
+  align-items: baseline;
+}
+.keychips .lead {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-faint);
+  margin-right: calc(var(--sp) * 1);
+}
+.chip {
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 3px calc(var(--sp) * 2);
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all .15s;
+}
+.chip:hover { border-color: var(--text-faint); color: var(--text); }
+.chip[aria-pressed="true"] {
+  border-color: var(--mark, var(--reconcile));
+  background: color-mix(in srgb, var(--mark, var(--reconcile)) 14%, transparent);
+  color: var(--text);
+}
+
 /* =============================================================== SIGNATURE
  * The reconciliation spine. Two facts flank a central column of context keys;
  * the key that differs is the hinge that explains the gap. This is the

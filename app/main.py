@@ -152,6 +152,8 @@ def get_fact(fact_id: str):
 def list_relations(
     verdict: str | None = None,
     fact_id: str | None = None,
+    key: str | None = None,
+    search: str | None = None,
     cross_document: bool = False,
     min_confidence: float = 0.0,
     limit: int = Query(50, le=500),
@@ -164,7 +166,8 @@ def list_relations(
     """
     store = get_store()
     relations = store.relations(
-        verdict=verdict, fact_id=fact_id, cross_document=cross_document,
+        verdict=verdict, fact_id=fact_id, key=key, search=search,
+        cross_document=cross_document,
         min_confidence=min_confidence, limit=limit, offset=offset,
     )
     out = []

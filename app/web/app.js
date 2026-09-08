@@ -19,8 +19,14 @@ const state = {
   docId: null,
   crossDoc: false,
   search: '',
+  key: null,       // which context key explains the judgement
   offset: 0,
 };
+
+// Ordered by how much a reader cares. `basis` leads because standalone vs
+// consolidated is the reconciliation people most often need to look up.
+const KEYS = ['basis', 'entity_scope', 'period', 'vintage', 'measure',
+              'segment', 'geography', 'valid_time', 'metric_identity'];
 
 const $ = (sel) => document.querySelector(sel);
 const el = (tag, cls, text) => {
@@ -201,10 +207,41 @@ function factRow(f) {
 
 /* ----------------------------------------------------------------- render */
 
+function renderKeyChips() {
+  const host = $('#keychips');
+  const relational = state.view !== 'FACTS';
+  host.hidden = !relational;
+  if (!relational) return;
+
+  host.innerHTML = '';
+  host.append(el('span', 'lead', 'explained by'));
+
+  const all = el('button', 'chip', 'any');
+  all.setAttribute('aria-pressed', String(!state.key));
+  all.onclick = () => { state.key = null; state.offset = 0; renderKeyChips(); render(); };
+  host.append(all);
+
+  KEYS.forEach((k) => {
+    const chip = el('button', 'chip', k);
+    chip.setAttribute('aria-pressed', String(state.key === k));
+    chip.style.setProperty('--mark', MARK[state.view] || 'var(--reconcile)');
+    chip.onclick = () => {
+      state.key = state.key === k ? null : k;
+      state.offset = 0;
+      renderKeyChips();
+      render();
+    };
+    host.append(chip);
+  });
+}
+
 async function render() {
   const host = $('#results');
   const isFacts = state.view === 'FACTS';
-  $('#search').hidden = !isFacts;
+  $('#search').hidden = false;
+  $('#search').placeholder = isFacts
+    ? 'Filter facts by subject, metric, or context…'
+    : 'Filter judgements — try “revenue”, “gateways”, “GDP”…';
 
   if (state.offset === 0) host.innerHTML = '';
 
@@ -226,12 +263,16 @@ async function render() {
         verdict: state.view, limit: PAGE, offset: state.offset,
       });
       if (state.crossDoc) params.set('cross_document', 'true');
+      if (state.key) params.set('key', state.key);
+      if (state.search) params.set('search', state.search);
       const rels = await api(`/api/relations?${params}`);
       if (!rels.length && state.offset === 0) {
         host.append(el('p', 'empty',
-          state.crossDoc
-            ? 'No judgements of this kind across documents. Try turning that filter off.'
-            : 'No judgements of this kind yet.'));
+          state.key
+            ? `No ${state.view.toLowerCase().replace(/_/g, ' ')} judgements explained by ${state.key}.`
+            : state.crossDoc
+              ? 'No judgements of this kind across documents. Try turning that filter off.'
+              : 'No judgements of this kind yet.'));
         $('#more').hidden = true;
         return;
       }
@@ -312,7 +353,9 @@ document.querySelectorAll('.tab[data-view]').forEach((tab) => {
     document.querySelectorAll('.tab[data-view]')
       .forEach((t) => t.setAttribute('aria-pressed', String(t === tab)));
     state.view = tab.dataset.view;
+    state.key = null;
     state.offset = 0;
+    renderKeyChips();
     render();
   };
 });
@@ -354,4 +397,5 @@ dz.addEventListener('drop', (e) => {
 
 loadStats();
 loadDocs();
+renderKeyChips();
 render();

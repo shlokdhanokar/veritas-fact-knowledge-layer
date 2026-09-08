@@ -226,6 +226,8 @@ class Store:
         *,
         verdict: str | None = None,
         fact_id: str | None = None,
+        key: str | None = None,
+        search: str | None = None,
         cross_document: bool = False,
         min_confidence: float = 0.0,
         limit: int = 100,
@@ -244,6 +246,18 @@ class Store:
         if fact_id:
             sql += " AND (r.left_id = ? OR r.right_id = ?)"
             args += [fact_id, fact_id]
+        if key:
+            # Which qualifier explains (or clouds) the judgement. With thousands
+            # of reconciliations, "show me the ones about accounting basis" is
+            # the question a reader actually has.
+            sql += " AND (r.differing_keys LIKE ? OR r.unstated_keys LIKE ?)"
+            args += [f'%"{key}"%'] * 2
+        if search:
+            # Matches either side, so "revenue" finds a judgement whichever
+            # fact happens to be on the left.
+            sql += (" AND (l.subject LIKE ? OR l.metric LIKE ?"
+                    " OR g.subject LIKE ? OR g.metric LIKE ?)")
+            args += [f"%{search}%"] * 4
         if cross_document:
             sql += " AND l.doc_id != g.doc_id"
         sql += " ORDER BY r.confidence DESC LIMIT ? OFFSET ?"
