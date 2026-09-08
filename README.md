@@ -59,6 +59,22 @@ everything; set it low to stay inside a tight free-tier quota.
 
 **<!-- PASTE YOUR LINK HERE -->**
 
+Under three minutes. Timestamps, so you can jump straight to whichever part you
+want to check:
+
+| Time | What it shows |
+|---|---|
+| 0:00 | What the project is |
+| 0:12 | **Required case 3** — an apparent contradiction explained by context. Two revenue figures on one page of one report, differing only by `basis` (standalone vs consolidated), with the evidence and the system's reasoning |
+| 0:52 | **Required case 4** — the extraction failure I found (table column binding), how it is measured, and what I would do instead |
+| 1:12 | **A PDF being processed** — a document the system has never seen, uploaded live through the UI |
+| 1:42 | **Required case 1** — the same fact corroborated across two documents, in different units (₹127 Cr and ₹1,266 Mn) |
+| 2:02 | **Required case 2** — a likely contradiction, and why it is reported as likely rather than confirmed; then the confirmed count (5 out of 1,507 facts) |
+| 2:25 | How I tested that this generalises to documents it has never seen |
+
+Source evidence and the system's reasoning are on screen for cases 1, 2 and 3,
+as asked.
+
 ---
 
 ## Approach
