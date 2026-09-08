@@ -143,15 +143,34 @@ function buildSpine(rel) {
   return spine;
 }
 
+const CURRENCY_SIGN = { INR: '₹', USD: '$', EUR: '€', GBP: '£' };
+
 function describeValue(f) {
   const q = f.quantity;
-  if (q && q.canonical_value != null) {
-    const v = Math.abs(q.canonical_value) >= 1e5
-      ? q.canonical_value.toExponential(4).replace('e+', 'e')
-      : q.canonical_value.toLocaleString(undefined, { maximumFractionDigits: 4 });
-    return `${v} ${q.canonical_unit || ''}`.trim();
+  if (!q || q.canonical_value == null) return f.value_text || '—';
+
+  const v = q.canonical_value;
+  const unit = q.canonical_unit || '';
+
+  // Values are stored in a base unit so they can be compared, but nobody reads
+  // 7.4541e10. Currency is shown in millions - the scale these filings are
+  // written in - so the headline matches the sentence quoted beneath it.
+  if (CURRENCY_SIGN[unit]) {
+    const sign = CURRENCY_SIGN[unit];
+    const abs = Math.abs(v);
+    if (abs >= 1e6) {
+      return `${sign}${(v / 1e6).toLocaleString(undefined, {
+        minimumFractionDigits: 2, maximumFractionDigits: 2 })} Mn`;
+    }
+    return `${sign}${v.toLocaleString(undefined, { maximumFractionDigits: 2 })}`;
   }
-  return f.value_text || '—';
+
+  if (unit === 'percent') {
+    return `${v.toLocaleString(undefined, { maximumFractionDigits: 2 })}%`;
+  }
+
+  const num = v.toLocaleString(undefined, { maximumFractionDigits: 2 });
+  return unit && unit !== 'count' ? `${num} ${unit}` : num;
 }
 
 function factSide(f) {
