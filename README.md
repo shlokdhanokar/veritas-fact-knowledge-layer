@@ -57,9 +57,9 @@ everything; set it low to stay inside a tight free-tier quota.
 
 ## Video Demo
 
-**<!-- PASTE YOUR LINK HERE -->**
+**https://drive.google.com/file/d/1XRuADqAoqCE6oUX2HfWM5cUiJO0uZ_5n/view?usp=sharing**
 
-Under three minutes. Timestamps, so you can jump straight to whichever part you
+Three minutes. Timestamps, so you can jump straight to whichever part you
 want to check:
 
 | Time | What it shows |
